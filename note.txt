@@ -26,3 +26,29 @@ C:\Windows\System32\drivers\etc -----------> hosts
             CustomLog "logs/proj_news.xyz-access.log" common
         </VirtualHost>
 - Remove public trên URL
+
+===================================== Router ==================================
+Extension: Laravel 5 Snippets
+           Laravel Blade Snippets
+
+- routes ---> web
+    http://proj_news.xyz/home
+    http://proj_news.xyz/category/1 --> Cách lấy tham số trên 
+- Cách dàng buộc tham số trên URL
+    Route::get('category/{id}', function ($id) {
+        return 'Category '.$id;
+    })->where('id', '[0-9]+');
+- Tham số có thể được truyền hoặc không được truyền, nếu không truyền thì sẽ lấy tham số mặc định
+    Route::get('category/{name?}', function ($name = 'John') {
+        return $name;
+    });
+
+- URL Prefix: Route::prefix = Route::group
+    Quản lý user        http://proj_news.xyz/admin/user
+    Quản lý slider      http://proj_news.xyz/admin/slider
+    Quản lý category    http://proj_news.xyz/admin/category
+
+Quản lý chi tiết slider: Nhóm tiếp cho slider
+    Danh sách slider    http://proj_news.xyz/admin/slider
+    Edit slider         http://proj_news.xyz/admin/slider/edit/12
+    Xóa slider          http://proj_news.xyz/admin/slider/delete/12
