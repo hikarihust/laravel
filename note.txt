@@ -1,0 +1,13 @@
+===================================== Cấu hình virtual host ==================================
+loacalhost/laravel = lar_training.xyz
+
+C:\xampp\apache\conf\extra -----------> httpd-vhosts.conf
+    <VirtualHost *:80>
+        ServerAdmin lar_training.xyz
+        DocumentRoot "C:/xampp/htdocs/laravel/"
+        ServerName lar_training.xyz
+        ErrorLog "logs/lar_training.xyz-error.log"
+        CustomLog "logs/lar_training.xyz-access.log" common
+    </VirtualHost>
+C:\Windows\System32\drivers\etc -----------> hosts
+    127.0.0.1       lar_training.xyz
