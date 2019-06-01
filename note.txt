@@ -11,3 +11,18 @@ C:\xampp\apache\conf\extra -----------> httpd-vhosts.conf
     </VirtualHost>
 C:\Windows\System32\drivers\etc -----------> hosts
     127.0.0.1       lar_training.xyz
+
+===================================== Hello Laravel ==================================
+
+- Cài đặt và chạy được source laravel: Thông qua composer
+    composer create-project --prefer-dist laravel/laravel proj_news
+    Để vào được trang web của dự án thì cần truy cập vào trong folder public, để có thể xóa
+        được public trên link url thì có thể dùng virtual host
+        <VirtualHost *:80>
+            ServerAdmin proj_news.xyz
+            DocumentRoot "C:/xampp/htdocs/laravel/proj_news/public"
+            ServerName proj_news.xyz
+            ErrorLog "logs/proj_news.xyz-error.log"
+            CustomLog "logs/proj_news.xyz-access.log" common
+        </VirtualHost>
+- Remove public trên URL
