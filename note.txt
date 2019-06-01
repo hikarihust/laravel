@@ -52,3 +52,6 @@ Quản lý chi tiết slider: Nhóm tiếp cho slider
     Danh sách slider    http://proj_news.xyz/admin/slider
     Edit slider         http://proj_news.xyz/admin/slider/edit/12
     Xóa slider          http://proj_news.xyz/admin/slider/delete/12
+
+===================================== Config ==================================
+Cách cấu hình, tạo tập tin cấu hình để định nghĩa các hằng số

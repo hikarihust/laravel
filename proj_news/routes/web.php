@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-$prefixAdmin = "admin";
+// $prefixAdmin = config('zvn.url.prefix_admin');
+$prefixAdmin = Config::get('zvn.url.prefix_admin', 'admin');
 
 Route::get('/', function () {
     return view('welcome');
