@@ -55,3 +55,6 @@ Quản lý chi tiết slider: Nhóm tiếp cho slider
 
 ===================================== Config ==================================
 Cách cấu hình, tạo tập tin cấu hình để định nghĩa các hằng số
+===================================== Controller ==================================
+Với mỗi đường dẫn, router ---> có thể điều hướng đến Controller để thực hiện công việc, task vụ
+Biết cách định nghĩa prefix, Giảm sự lặp lại khi code, dùng Controller định nghĩa cho router

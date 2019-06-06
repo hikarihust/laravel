@@ -46,16 +46,15 @@ Route::group(['prefix' => $prefixAdmin], function () {
         return "/admin/user";
     });
 
-    Route::group(['prefix' => 'slider'], function () {
-        Route::get('', function () {
-            return "slider List";
-        });
-        Route::get('edit/{id}', function ($id) {
-            return "slider Edit" . $id;
-        })->where('id', '[0-9]+');
-        Route::get('delete/{id}', function ($id) {
-            return "slider Delete" . $id;
-        })->where('id', '[0-9]+');
+    $prefix = 'slider';
+    Route::group(['prefix' => $prefix], function () use ($prefix) {
+        $controller = ucfirst($prefix) . 'Controller@'; 
+
+        Route::get('', $controller . 'index');
+
+        Route::get('edit/{id}', $controller . 'form')->where('id', '[0-9]+');
+
+        Route::get('delete/{id}', $controller . 'delete')->where('id', '[0-9]+');
     });
 
     Route::get('category', function () {
