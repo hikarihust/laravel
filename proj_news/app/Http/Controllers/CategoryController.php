@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class SliderController extends Controller
+class CategoryController extends Controller
 {
-    private $pathViewController = 'admin.slider.';
+    private $pathViewController = 'admin.category.';
     // public function show($id)
     // {
     //     return view('user.profile', ['user' => User::findOrFail($id)]);
@@ -24,6 +24,6 @@ class SliderController extends Controller
 
     public function delete()
     {
-        return "SlideController - delete";
+        return "CategoryController - delete";
     }
 }
