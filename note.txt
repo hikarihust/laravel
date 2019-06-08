@@ -73,3 +73,4 @@ Trong trường hợp có nhiều tham số thì sử dụng đến Request
 
 ===================================== route name ==================================
 Đặt tên(định danh) cho route, khi cần gọi nó ở phần view thì gọi đến tên của route
+redirect: Khi dùng đến phương thức redirect() của laravel thì cần phải truyền vào tên của route

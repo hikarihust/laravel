@@ -48,14 +48,14 @@ Route::group(['prefix' => $prefixAdmin], function () {
 
     // =========================== SLIDER ==============================
     $prefix = 'slider';
-    Route::group(['prefix' => $prefix], function () use ($prefix) {
-        $controller = ucfirst($prefix) . 'Controller@'; 
-        Route::get('', ['as' => $prefix, 'uses' => $controller . 'index']);
+    $controllerName = 'slider';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('', ['as' => $controllerName, 'uses' => $controller . 'index']);
 
-        //Route::get('form/{id?}', $controller . 'form')->where('id', '[0-9]+');
-        Route::get('form/{id?}', ['as' => $prefix . '/form','uses' => $controller . 'form']);
-        Route::get('delete/{id}', ['as' => $prefix . '/delete','uses' => $controller . 'delete']);
-        Route::get('change-status-{status}/{id}', ['as' => $prefix . '/status','uses' => $controller . 'status']);
+        Route::get('form/{id?}', ['as' => $controllerName . '/form','uses' => $controller . 'form'])->where('id', '[0-9]+');
+        Route::get('delete/{id}', ['as' => $controllerName . '/delete','uses' => $controller . 'delete'])->where('id', '[0-9]+');
+        Route::get('change-status-{status}/{id}', ['as' => $controllerName . '/status','uses' => $controller . 'status']);
     });
 
     // change-status-active/12  -> inactive 12

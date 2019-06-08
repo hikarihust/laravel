@@ -31,7 +31,7 @@ class SliderController extends Controller
         echo "<br />";
         echo $request->route('status');
         echo "<br />";
-        return "SlideController - status";
+        return redirect()->route('slider');
     }
 
     public function delete()
