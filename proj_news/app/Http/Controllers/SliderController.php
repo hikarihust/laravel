@@ -17,9 +17,11 @@ class SliderController extends Controller
         return view($this->pathViewController . 'index');
     }
  
-    public function form()
-    {
-        return view($this->pathViewController . 'form');
+    public function form($id)
+    {   
+        echo $id;
+        $title = 'SliderController - form';
+        return view($this->pathViewController . 'form', ['id' => $id, 'title' => $title]);
     }
 
     public function delete()

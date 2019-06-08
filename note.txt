@@ -61,3 +61,6 @@ Biết cách định nghĩa prefix, Giảm sự lặp lại khi code, dùng Cont
 
 ===================================== Controller View ==================================
 Cách khai báo phần view của 1 action nào đó
+===================================== params ==================================
+Cách lấy params từ trên url, trong phần khai báo router mình đã khai báo nhận vào id
+Cách truyền 1 or nhiều giá trị từ action ra ngoài view

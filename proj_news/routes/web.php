@@ -46,6 +46,7 @@ Route::group(['prefix' => $prefixAdmin], function () {
         return "/admin/user";
     });
 
+    // =========================== SLIDER ==============================
     $prefix = 'slider';
     Route::group(['prefix' => $prefix], function () use ($prefix) {
         $controller = ucfirst($prefix) . 'Controller@'; 
@@ -57,7 +58,19 @@ Route::group(['prefix' => $prefixAdmin], function () {
         Route::get('delete/{id}', $controller . 'delete')->where('id', '[0-9]+');
     });
 
-    Route::get('category', function () {
-        return "/admin/category";
+    // =========================== CATEGORY ==============================
+    $prefix = 'category';
+    Route::group(['prefix' => $prefix], function () use ($prefix) {
+        $controller = ucfirst($prefix) . 'Controller@'; 
+
+        Route::get('', $controller . 'index');
+
+        Route::get('edit/{id}', $controller . 'form')->where('id', '[0-9]+');
+
+        Route::get('delete/{id}', $controller . 'delete')->where('id', '[0-9]+');
     });
+
+    // Route::get('category', function () {
+    //     return "/admin/category";
+    // });
 });
