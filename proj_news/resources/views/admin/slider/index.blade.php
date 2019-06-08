@@ -5,11 +5,11 @@
 <a href="slider/change-status-active/12" target="_blank">atatus</a>
 
 <?php 
-    $linkList = route('slider');
-    $linkAdd = route('slider/form');
-    $linkEdit = route('slider/form', ['id' => 12]);
-    $linkDelete = route('slider/delete', ['id' => 12]);
-    $linkStatus = route('slider/status', ['id' => 12, 'status' => 'active']);
+    $linkList = route($controllerName);
+    $linkAdd = route($controllerName . '/form');
+    $linkEdit = route($controllerName . '/form', ['id' => 12]);
+    $linkDelete = route($controllerName . '/delete', ['id' => 12]);
+    $linkStatus = route($controllerName . '/status', ['id' => 12, 'status' => 'active']);
 
     echo "<br />";
     echo $linkList;
@@ -21,4 +21,7 @@
     echo $linkDelete;
     echo "<br />";
     echo $linkStatus;
+    echo "<br />";
 ?>
+
+<a href="<?php echo $linkAdd ?>">Add</a>

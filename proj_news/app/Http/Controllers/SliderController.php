@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\View;
 
 class SliderController extends Controller
 {
     private $pathViewController = 'admin.slider.';
-    // public function show($id)
-    // {
-    //     return view('user.profile', ['user' => User::findOrFail($id)]);
-    // }
+    private $controllerName = 'slider';
+
+    public function __construct()
+    {
+    //   View::share('controllerName', $this->controllerName);
+      view()->share('controllerName', $this->controllerName);
+    }
 
     public function index()
     {
