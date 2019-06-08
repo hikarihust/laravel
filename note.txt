@@ -96,3 +96,6 @@ connect db: Kết nối được đến database, lấy ra được danh sách c
     Keyword: Laravel test database connection, laravel show tables
     use DB 
     $tables = DB::select('SHOW TABLES');
+init model:
+    Eloquent ORM 
+    php artisan make:model Slider
