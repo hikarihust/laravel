@@ -82,3 +82,8 @@ extends --> Lấy toàn bộ nội dung của tập tin khác đưa vào
 Keyword: laravel asset
 Sử dụng asset() để load các tập tin về js, css, hình ảnh
     Mặc định thì phương thức asset này nó sẽ vào trong folder public
+split file: Tách tập tin main ra thành nhiều tập tin nhỏ hơn
+    Các phần về meta, css -> tách ra làm 1 tập tin riêng
+    include: Bắt đầu đi vào từ 'views'
+    yield(): Định nghĩa vùng, vị trí xuất hiện trong main
+    section(): Lấy nội dung để đổ vào vùng trong main
