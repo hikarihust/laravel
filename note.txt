@@ -79,3 +79,6 @@ Keyword: laravel share data with all views
 
 ===================================== Nhúng giao diện cho backend ==================================
 extends --> Lấy toàn bộ nội dung của tập tin khác đưa vào 
+Keyword: laravel asset
+Sử dụng asset() để load các tập tin về js, css, hình ảnh
+    Mặc định thì phương thức asset này nó sẽ vào trong folder public

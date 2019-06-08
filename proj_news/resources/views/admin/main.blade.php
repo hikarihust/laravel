@@ -9,19 +9,19 @@
     <link rel="icon" href="img/favicon.ico" type="image/ico"/>
     <title>Admin | Index</title>
     <!-- Bootstrap -->
-    <link href="asset/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('admin/asset/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('admin/css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="asset/nprogress/nprogress.css" rel="stylesheet">
+    <link href="{{ asset('admin/asset/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- iCheck -->
-    <link href="asset/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="{{ asset('admin/asset/iCheck/skins/flat/green.css') }}" rel="stylesheet">
     <!-- bootstrap-progressbar -->
-    <link href="asset/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="{{ asset('admin/asset/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="css/custom.min.css" rel="stylesheet">
+    <link href="{{ asset('admin/css/custom.min.css') }}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="css/mycss.css" rel="stylesheet">
+    <link href="{{ asset('admin/css/mycss.css') }}" rel="stylesheet">
   </head>
   <body class="nav-md">
     <div class="container body">
@@ -423,18 +423,18 @@
       </div>
     </div>
     <!-- jQuery -->
-    <script src="js/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('admin/js/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
-    <script src="asset/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('admin/asset/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- FastClick -->
-    <script src="js/fastclick/lib/fastclick.js"></script>
+    <script src="{{ asset('admin/js/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
-    <script src="asset/nprogress/nprogress.js"></script>
+    <script src="{{ asset('admin/asset/nprogress/nprogress.js') }}"></script>
     <!-- bootstrap-progressbar -->
-    <script src="asset/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="{{ asset('admin/asset/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
     <!-- iCheck -->
-    <script src="asset/iCheck/icheck.min.js"></script>
+    <script src="{{ asset('admin/asset/iCheck/icheck.min.js') }}"></script>
     <!-- Custom Theme Scripts -->
-    <script src="js/custom.min.js"></script>
+    <script src="{{ asset('admin/js/custom.min.js') }}"></script>
   </body>
 </html>
