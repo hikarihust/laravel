@@ -50,11 +50,12 @@ Route::group(['prefix' => $prefixAdmin], function () {
     $prefix = 'slider';
     Route::group(['prefix' => $prefix], function () use ($prefix) {
         $controller = ucfirst($prefix) . 'Controller@'; 
+        Route::get('', ['as' => $prefix, 'uses' => $controller . 'index']);
 
-        Route::get('', $controller . 'index');
-        Route::get('edit/{id}', $controller . 'form')->where('id', '[0-9]+');
-        Route::get('delete/{id}', $controller . 'delete')->where('id', '[0-9]+');
-        Route::get('change-status-{status}/{id}', $controller . 'status')->where('id', '[0-9]+');
+        //Route::get('form/{id?}', $controller . 'form')->where('id', '[0-9]+');
+        Route::get('form/{id?}', ['as' => $prefix . '/form','uses' => $controller . 'form']);
+        Route::get('delete/{id}', ['as' => $prefix . '/delete','uses' => $controller . 'delete']);
+        Route::get('change-status-{status}/{id}', ['as' => $prefix . '/status','uses' => $controller . 'status']);
     });
 
     // change-status-active/12  -> inactive 12

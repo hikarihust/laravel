@@ -70,3 +70,6 @@ Keyword: laravel request get router parameters
 Router có nhiều tham số --> trong action lấy theo thứ tự mà mình đã khai báo trên router
 Trong trường hợp có nhiều tham số thì sử dụng đến Request
     $request->route('id');
+
+===================================== route name ==================================
+Đặt tên(định danh) cho route, khi cần gọi nó ở phần view thì gọi đến tên của route
