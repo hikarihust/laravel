@@ -99,3 +99,4 @@ connect db: Kết nối được đến database, lấy ra được danh sách c
 init model:
     Eloquent ORM 
     php artisan make:model Slider
+all: Lấy ra danh sách slider

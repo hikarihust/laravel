@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
+use App\Slider as SliderModel;
 // use Illuminate\Support\Facades\View;
 
 class SliderController extends Controller
@@ -20,11 +20,11 @@ class SliderController extends Controller
 
     public function index()
     {   
-        $tables = DB::select('SHOW TABLES');
-        echo "<pre>";
-        print_r($tables);
-        echo "</pre>";
-
+        $items = SliderModel::all();
+        foreach ($items as $item) {
+            echo $item->name;
+            echo "<br />";
+        }
 
         return view($this->pathViewController . 'index');
     }

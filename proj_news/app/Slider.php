@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $table = 'slder';
+    protected $table = 'slider';
     protected $primaryKey = 'id';
     public $timestamps = false;
     const CREATED_AT = 'created';
