@@ -42,6 +42,14 @@ $prefixAdmin = Config::get('zvn.url.prefix_admin', 'admin');
 // });
 
 Route::group(['prefix' => $prefixAdmin], function () {
+    // =========================== DASHBOARD ==============================
+    $prefix = 'dashboard';
+    $controllerName = 'dashboard';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('', ['as' => $controllerName, 'uses' => $controller . 'index']);
+    });
+
     // =========================== SLIDER ==============================
     $prefix = 'slider';
     $controllerName = 'slider';
@@ -53,4 +61,5 @@ Route::group(['prefix' => $prefixAdmin], function () {
         Route::get('delete/{id}', ['as' => $controllerName . '/delete','uses' => $controller . 'delete'])->where('id', '[0-9]+');
         Route::get('change-status-{status}/{id}', ['as' => $controllerName . '/status','uses' => $controller . 'status']);
     });
+
 });

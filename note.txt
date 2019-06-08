@@ -76,3 +76,6 @@ Trong trường hợp có nhiều tham số thì sử dụng đến Request
 redirect: Khi dùng đến phương thức redirect() của laravel thì cần phải truyền vào tên của route
 Keyword: laravel share data with all views
     Cách truyền dữ liệu từ Controller đến tất cả các view của Controller đó
+
+===================================== Nhúng giao diện cho backend ==================================
+extends --> Lấy toàn bộ nội dung của tập tin khác đưa vào 
