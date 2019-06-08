@@ -87,3 +87,4 @@ split file: Tách tập tin main ra thành nhiều tập tin nhỏ hơn
     include: Bắt đầu đi vào từ 'views'
     yield(): Định nghĩa vùng, vị trí xuất hiện trong main
     section(): Lấy nội dung để đổ vào vùng trong main
+menu link: Gắn link cho menu
