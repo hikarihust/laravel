@@ -52,23 +52,13 @@ Route::group(['prefix' => $prefixAdmin], function () {
         $controller = ucfirst($prefix) . 'Controller@'; 
 
         Route::get('', $controller . 'index');
-
         Route::get('edit/{id}', $controller . 'form')->where('id', '[0-9]+');
-
         Route::get('delete/{id}', $controller . 'delete')->where('id', '[0-9]+');
+        Route::get('change-status-{status}/{id}', $controller . 'status')->where('id', '[0-9]+');
     });
 
-    // =========================== CATEGORY ==============================
-    $prefix = 'category';
-    Route::group(['prefix' => $prefix], function () use ($prefix) {
-        $controller = ucfirst($prefix) . 'Controller@'; 
-
-        Route::get('', $controller . 'index');
-
-        Route::get('edit/{id}', $controller . 'form')->where('id', '[0-9]+');
-
-        Route::get('delete/{id}', $controller . 'delete')->where('id', '[0-9]+');
-    });
+    // change-status-active/12  -> inactive 12
+    // change-status-inactive/14    -> active 14
 
     // Route::get('category', function () {
     //     return "/admin/category";

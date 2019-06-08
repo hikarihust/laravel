@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
@@ -22,6 +23,15 @@ class SliderController extends Controller
         echo $id;
         $title = 'SliderController - form';
         return view($this->pathViewController . 'form', ['id' => $id, 'title' => $title]);
+    }
+
+    public function status(Request $request)
+    {   
+        echo $request->id;
+        echo "<br />";
+        echo $request->route('status');
+        echo "<br />";
+        return "SlideController - status";
     }
 
     public function delete()

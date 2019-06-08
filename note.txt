@@ -64,3 +64,9 @@ Cách khai báo phần view của 1 action nào đó
 ===================================== params ==================================
 Cách lấy params từ trên url, trong phần khai báo router mình đã khai báo nhận vào id
 Cách truyền 1 or nhiều giá trị từ action ra ngoài view
+
+===================================== request ==================================
+Keyword: laravel request get router parameters
+Router có nhiều tham số --> trong action lấy theo thứ tự mà mình đã khai báo trên router
+Trong trường hợp có nhiều tham số thì sử dụng đến Request
+    $request->route('id');
