@@ -100,3 +100,7 @@ init model:
     Eloquent ORM 
     php artisan make:model Slider
 all: Lấy ra danh sách slider
+optimize model: 
+    Tạo folder Models để quản lý các tập tin Model
+    params: Chứa các tham số cần cho câu truy vấn
+    options: Dùng để viết được nhiều các trường hợp xử lý khác nhau

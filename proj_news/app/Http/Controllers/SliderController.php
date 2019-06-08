@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Slider as SliderModel;
+use App\Models\Slider as MainModel;
 // use Illuminate\Support\Facades\View;
 
 class SliderController extends Controller
@@ -20,7 +20,9 @@ class SliderController extends Controller
 
     public function index()
     {   
-        $items = SliderModel::all();
+        $mainModel = new MainModel();
+        $items = $mainModel->listItems(null, ['task' => 'admin-list-items']);
+
         foreach ($items as $item) {
             echo $item->name;
             echo "<br />";
