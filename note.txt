@@ -104,3 +104,11 @@ optimize model:
     Tạo folder Models để quản lý các tập tin Model
     params: Chứa các tham số cần cho câu truy vấn
     options: Dùng để viết được nhiều các trường hợp xử lý khác nhau
+debugbar: Cài đặt debugbar để dễ dàng trong việc debug
+    Biết cách xem được câu Query
+    Keyword: Laravel get query string, Laravel debugbar
+    Laravel debugbar giúp ta xem được thông tin của nhiều thứ như: route, view, các câu lệnh truy vấn
+    Cách cài đặt: composer require barryvdh/laravel-debugbar --dev
+    Nó được kích hoạt khi:
+        APP_DEBUG=true
+        'debug' => env('APP_DEBUG', false),

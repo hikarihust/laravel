@@ -24,7 +24,7 @@ class SliderController extends Controller
         $items = $mainModel->listItems(null, ['task' => 'admin-list-items']);
 
         foreach ($items as $item) {
-            echo $item->name;
+            echo $item->link;
             echo "<br />";
         }
 
