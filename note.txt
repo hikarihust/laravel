@@ -112,3 +112,8 @@ debugbar: Cài đặt debugbar để dễ dàng trong việc debug
     Nó được kích hoạt khi:
         APP_DEBUG=true
         'debug' => env('APP_DEBUG', false),
+select: Cách thay đổi để viết câu truy vấn làm sao để nó chỉ lấy ra các cột cần thiết mà thôi
+    Keyword: Laravel Eloquent select columns
+    Nên sử dụng select() và liệt kê ra tên của các field cần lấy chứ không nên dùng select('*')
+    Sử dụng self thay cho việc dùng tên class khi thực hiện các câu lệnh truy vấn ở trong chính class đó
+    Muốn xem kết quả thu được từ câu query thì dùng $items->toArray()
