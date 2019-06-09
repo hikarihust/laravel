@@ -2,29 +2,29 @@
 loacalhost/laravel = lar_training.xyz
 
 C:\xampp\apache\conf\extra -----------> httpd-vhosts.conf
-    <VirtualHost *:80>
-        ServerAdmin lar_training.xyz
-        DocumentRoot "C:/xampp/htdocs/laravel/"
-        ServerName lar_training.xyz
-        ErrorLog "logs/lar_training.xyz-error.log"
-        CustomLog "logs/lar_training.xyz-access.log" common
-    </VirtualHost>
+  <VirtualHost *:80>
+      ServerAdmin lar_training.xyz
+      DocumentRoot "C:/xampp/htdocs/laravel/"
+      ServerName lar_training.xyz
+      ErrorLog "logs/lar_training.xyz-error.log"
+      CustomLog "logs/lar_training.xyz-access.log" common
+  </VirtualHost>
 C:\Windows\System32\drivers\etc -----------> hosts
-    127.0.0.1       lar_training.xyz
+  127.0.0.1       lar_training.xyz
 
 ===================================== Hello Laravel ==================================
 
 - Cài đặt và chạy được source laravel: Thông qua composer
     composer create-project --prefer-dist laravel/laravel proj_news
     Để vào được trang web của dự án thì cần truy cập vào trong folder public, để có thể xóa
-        được public trên link url thì có thể dùng virtual host
-        <VirtualHost *:80>
-            ServerAdmin proj_news.xyz
-            DocumentRoot "C:/xampp/htdocs/laravel/proj_news/public"
-            ServerName proj_news.xyz
-            ErrorLog "logs/proj_news.xyz-error.log"
-            CustomLog "logs/proj_news.xyz-access.log" common
-        </VirtualHost>
+      được public trên link url thì có thể dùng virtual host
+      <VirtualHost *:80>
+          ServerAdmin proj_news.xyz
+          DocumentRoot "C:/xampp/htdocs/laravel/proj_news/public"
+          ServerName proj_news.xyz
+          ErrorLog "logs/proj_news.xyz-error.log"
+          CustomLog "logs/proj_news.xyz-access.log" common
+      </VirtualHost>
 - Remove public trên URL
 
 ===================================== Router ==================================
@@ -32,26 +32,26 @@ Extension: Laravel 5 Snippets
            Laravel Blade Snippets
 
 - routes ---> web
-    http://proj_news.xyz/home
-    http://proj_news.xyz/category/1 --> Cách lấy tham số trên 
+  http://proj_news.xyz/home
+  http://proj_news.xyz/category/1 --> Cách lấy tham số trên 
 - Cách dàng buộc tham số trên URL
-    Route::get('category/{id}', function ($id) {
-        return 'Category '.$id;
-    })->where('id', '[0-9]+');
+  Route::get('category/{id}', function ($id) {
+      return 'Category '.$id;
+  })->where('id', '[0-9]+');
 - Tham số có thể được truyền hoặc không được truyền, nếu không truyền thì sẽ lấy tham số mặc định
-    Route::get('category/{name?}', function ($name = 'John') {
-        return $name;
-    });
+  Route::get('category/{name?}', function ($name = 'John') {
+      return $name;
+  });
 
 - URL Prefix: Route::prefix = Route::group
-    Quản lý user        http://proj_news.xyz/admin/user
-    Quản lý slider      http://proj_news.xyz/admin/slider
-    Quản lý category    http://proj_news.xyz/admin/category
+  Quản lý user        http://proj_news.xyz/admin/user
+  Quản lý slider      http://proj_news.xyz/admin/slider
+  Quản lý category    http://proj_news.xyz/admin/category
 
 Quản lý chi tiết slider: Nhóm tiếp cho slider
-    Danh sách slider    http://proj_news.xyz/admin/slider
-    Edit slider         http://proj_news.xyz/admin/slider/edit/12
-    Xóa slider          http://proj_news.xyz/admin/slider/delete/12
+  Danh sách slider    http://proj_news.xyz/admin/slider
+  Edit slider         http://proj_news.xyz/admin/slider/edit/12
+  Xóa slider          http://proj_news.xyz/admin/slider/delete/12
 
 ===================================== Config ==================================
 Cách cấu hình, tạo tập tin cấu hình để định nghĩa các hằng số
@@ -69,51 +69,59 @@ Cách truyền 1 or nhiều giá trị từ action ra ngoài view
 Keyword: laravel request get router parameters
 Router có nhiều tham số --> trong action lấy theo thứ tự mà mình đã khai báo trên router
 Trong trường hợp có nhiều tham số thì sử dụng đến Request
-    $request->route('id');
+  $request->route('id');
 
 ===================================== route name ==================================
 Đặt tên(định danh) cho route, khi cần gọi nó ở phần view thì gọi đến tên của route
 redirect: Khi dùng đến phương thức redirect() của laravel thì cần phải truyền vào tên của route
 Keyword: laravel share data with all views
-    Cách truyền dữ liệu từ Controller đến tất cả các view của Controller đó
+  Cách truyền dữ liệu từ Controller đến tất cả các view của Controller đó
 
 ===================================== Nhúng giao diện cho backend ==================================
 extends --> Lấy toàn bộ nội dung của tập tin khác đưa vào 
 Keyword: laravel asset
 Sử dụng asset() để load các tập tin về js, css, hình ảnh
-    Mặc định thì phương thức asset này nó sẽ vào trong folder public
+  Mặc định thì phương thức asset này nó sẽ vào trong folder public
 split file: Tách tập tin main ra thành nhiều tập tin nhỏ hơn
-    Các phần về meta, css -> tách ra làm 1 tập tin riêng
-    include: Bắt đầu đi vào từ 'views'
-    yield(): Định nghĩa vùng, vị trí xuất hiện trong main
-    section(): Lấy nội dung để đổ vào vùng trong main
+  Các phần về meta, css -> tách ra làm 1 tập tin riêng
+  include: Bắt đầu đi vào từ 'views'
+  yield(): Định nghĩa vùng, vị trí xuất hiện trong main
+  section(): Lấy nội dung để đổ vào vùng trong main
 menu link: Gắn link cho menu
 
 =============================== Xây dựng chức năng lấy danh sách Slider ============================
 fix image: fix link cho phần image, tách view cho phần danh sách
 database: Cấu trúc bảng slider, dữ liệu demo và các hình ảnh
 connect db: Kết nối được đến database, lấy ra được danh sách các table trong database
-    Keyword: Laravel test database connection, laravel show tables
-    use DB 
-    $tables = DB::select('SHOW TABLES');
+  Keyword: Laravel test database connection, laravel show tables
+  use DB 
+  $tables = DB::select('SHOW TABLES');
 init model:
-    Eloquent ORM 
-    php artisan make:model Slider
+  Eloquent ORM 
+  php artisan make:model Slider
 all: Lấy ra danh sách slider
 optimize model: 
-    Tạo folder Models để quản lý các tập tin Model
-    params: Chứa các tham số cần cho câu truy vấn
-    options: Dùng để viết được nhiều các trường hợp xử lý khác nhau
+  Tạo folder Models để quản lý các tập tin Model
+  params: Chứa các tham số cần cho câu truy vấn
+  options: Dùng để viết được nhiều các trường hợp xử lý khác nhau
 debugbar: Cài đặt debugbar để dễ dàng trong việc debug
-    Biết cách xem được câu Query
-    Keyword: Laravel get query string, Laravel debugbar
-    Laravel debugbar giúp ta xem được thông tin của nhiều thứ như: route, view, các câu lệnh truy vấn
-    Cách cài đặt: composer require barryvdh/laravel-debugbar --dev
-    Nó được kích hoạt khi:
-        APP_DEBUG=true
-        'debug' => env('APP_DEBUG', false),
+  Biết cách xem được câu Query
+  Keyword: Laravel get query string, Laravel debugbar
+  Laravel debugbar giúp ta xem được thông tin của nhiều thứ như: route, view, các câu lệnh truy vấn
+  Cách cài đặt: composer require barryvdh/laravel-debugbar --dev
+  Nó được kích hoạt khi:
+      APP_DEBUG=true
+      'debug' => env('APP_DEBUG', false),
 select: Cách thay đổi để viết câu truy vấn làm sao để nó chỉ lấy ra các cột cần thiết mà thôi
-    Keyword: Laravel Eloquent select columns
-    Nên sử dụng select() và liệt kê ra tên của các field cần lấy chứ không nên dùng select('*')
-    Sử dụng self thay cho việc dùng tên class khi thực hiện các câu lệnh truy vấn ở trong chính class đó
-    Muốn xem kết quả thu được từ câu query thì dùng $items->toArray()
+  Keyword: Laravel Eloquent select columns
+  Nên sử dụng select() và liệt kê ra tên của các field cần lấy chứ không nên dùng select('*')
+  Sử dụng self thay cho việc dùng tên class khi thực hiện các câu lệnh truy vấn ở trong chính class đó
+  Muốn xem kết quả thu được từ câu query thì dùng $items->toArray()
+
+=============================== Xây dựng chức năng hiển thị danh sách Slider ============================
+if else - where:
+  Nếu như có dữ liệu thì hiện thị ra danh sách dữ liệu, còn nếu như không có dữ liệu thì hiển thị ra câu
+      thông báo là không có dữ liệu
+  if else khi sử dụng blade template
+  Laravel doc: blade
+  Keyword: Laravel Eloquent where greater than
