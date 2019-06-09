@@ -125,3 +125,8 @@ if else - where:
   if else khi sử dụng blade template
   Laravel doc: blade
   Keyword: Laravel Eloquent where greater than
+list_empty:
+  Khi xây dựng phần quản lý cho các phần khác thì trong trường hợp không có dữ liệu thì cấu trúc của nó là
+    tương tự mà chỉ khác ở phần colpan mà thôi
+  folder templates: Chứa giao diện dùng chung
+  Bố trí lại các views của các Controller -> đặt trong folder pages

@@ -57,11 +57,7 @@
             </td>
           </tr>
         @else
-          <tr>
-            <td colspan="10" class="text-center">
-              Dữ liệu đang được cập nhật
-            </td>
-          </tr>
+          @include('admin.templates.list_empty', ['colspan' => 10])
         @endif
       </tbody>
     </table>
