@@ -130,3 +130,5 @@ list_empty:
     tương tự mà chỉ khác ở phần colpan mà thôi
   folder templates: Chứa giao diện dùng chung
   Bố trí lại các views của các Controller -> đặt trong folder pages
+foreach:
+  Đổ dữ liệu lấy ra được ra phần danh sách
