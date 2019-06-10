@@ -1,3 +1,7 @@
+@php
+    use App\Helpers\Template as Template;
+@endphp
+
 <div class="x_content">
   <div class="table-responsive">
     <table class="table table-striped jambo_table bulk_action">
@@ -21,10 +25,8 @@
               $link        = $val->link;
               $thumb       = $val->thumb;
               $status      = $val->status;
-              $created     = $val->created;
-              $created_by  = $val->created_by;
-              $modified    = $val->modified;
-              $modified_by = $val->modified_by;
+              $createdHistory = Template::showItemHistory($val->created_by, $val->created);
+              $modifiedHistory = Template::showItemHistory($val->modified_by, $val->created);
             @endphp
             <tr class="even pointer">
             <td class=""> {{ $index }} </td>
@@ -35,14 +37,8 @@
                 <p><img src="{{ $thumb }}" alt="{{ $name }}" class="zvn-thumb"></p>
               </td>
               <td class=""><a href="http://study-lar.com/admin123/slider/change-status-active/1" type="button" class="btn btn-round btn-success">{{ $status }}</a></td>
-              <td>
-                <p><i class="fa fa-user"></i> {{ $created }}</p>
-                <p><i class="fa fa-clock-o"></i> {{ $created_by }}</p>
-              </td>
-              <td>
-                <p><i class="fa fa-user"></i> {{ $modified }}</p>
-                <p><i class="fa fa-clock-o"></i> {{ $modified_by }}</p>
-              </td>
+              <td>{!! $createdHistory !!}</td>
+              <td>{!! $modifiedHistory !!}</td>
               <td class="last">
                 <div class="zvn-box-btn-filter">
                   <a href="http://study-lar.com/admin123/slider/form/1" type="button" class="btn btn-icon btn-success" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
