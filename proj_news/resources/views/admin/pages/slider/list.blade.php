@@ -20,23 +20,25 @@
           @foreach ($items as $key => $val)
             @php
               $index       = $key + 1;
+              $class       = ($index%2 === 0) ? 'even' : 'odd';
+              $id          = $val->id;
               $name        = $val->name;
               $description = $val->description;
               $link        = $val->link;
               $thumb       = $val->thumb;
-              $status      = $val->status;
-              $createdHistory = Template::showItemHistory($val->created_by, $val->created);
-              $modifiedHistory = Template::showItemHistory($val->modified_by, $val->created);
+              $status      = Template::showItemStatus($controllerName, $id, $val->status);
+              $createdHistory   = Template::showItemHistory($val->created_by, $val->created);
+              $modifiedHistory  = Template::showItemHistory($val->modified_by, $val->created);
             @endphp
-            <tr class="even pointer">
-            <td class=""> {{ $index }} </td>
+            <tr class="{{ $class }} pointer">
+            <td> {{ $index }} </td>
               <td width="40%">
                 <p><strong>Name:</strong> {{ $name }} </p>
                 <p><strong>Description:</strong>{{ $description }}</p>
                 <p><strong>Link:</strong>{{ $link }}</p>
                 <p><img src="{{ $thumb }}" alt="{{ $name }}" class="zvn-thumb"></p>
               </td>
-              <td class=""><a href="http://study-lar.com/admin123/slider/change-status-active/1" type="button" class="btn btn-round btn-success">{{ $status }}</a></td>
+              <td>{!! $status !!}</td>
               <td>{!! $createdHistory !!}</td>
               <td>{!! $modifiedHistory !!}</td>
               <td class="last">
