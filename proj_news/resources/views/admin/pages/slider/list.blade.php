@@ -29,6 +29,7 @@
               $status      = Template::showItemStatus($controllerName, $id, $val->status);
               $createdHistory   = Template::showItemHistory($val->created_by, $val->created);
               $modifiedHistory  = Template::showItemHistory($val->modified_by, $val->created);
+              $listBtnAction    = Template::showButtonAction($controllerName, $id);
             @endphp
             <tr class="{{ $class }} pointer">
             <td> {{ $index }} </td>
@@ -41,16 +42,7 @@
               <td>{!! $status !!}</td>
               <td>{!! $createdHistory !!}</td>
               <td>{!! $modifiedHistory !!}</td>
-              <td class="last">
-                <div class="zvn-box-btn-filter">
-                  <a href="http://study-lar.com/admin123/slider/form/1" type="button" class="btn btn-icon btn-success" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                  <i class="fa fa-pencil"></i>
-                  </a>
-                  <a href="http://study-lar.com/admin123/slider/delete/1" type="button" class="btn btn-icon btn-danger btn-delete" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
-                  <i class="fa fa-trash"></i>
-                  </a>
-                </div>
-              </td>
+              <td class="last">{!! $listBtnAction !!}</td>
             </tr>
           @endforeach
         @else
