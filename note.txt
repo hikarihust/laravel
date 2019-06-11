@@ -136,3 +136,5 @@ showItemHistory:
   Tạo helper showItemHistory để tạo ra phần code tạo ra và chỉnh sửa bởi ai, vào time nào
 showItemStatus:
   Tạo mã nguồn cho phần status
+showItemThumb: 
+  Xử lý phần hiển thị tấm hình

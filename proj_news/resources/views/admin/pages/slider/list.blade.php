@@ -25,7 +25,7 @@
               $name        = $val->name;
               $description = $val->description;
               $link        = $val->link;
-              $thumb       = $val->thumb;
+              $thumb       = Template::showItemThumb($controllerName, $val->thumb, $val->name);
               $status      = Template::showItemStatus($controllerName, $id, $val->status);
               $createdHistory   = Template::showItemHistory($val->created_by, $val->created);
               $modifiedHistory  = Template::showItemHistory($val->modified_by, $val->created);
@@ -36,7 +36,7 @@
                 <p><strong>Name:</strong> {{ $name }} </p>
                 <p><strong>Description:</strong>{{ $description }}</p>
                 <p><strong>Link:</strong>{{ $link }}</p>
-                <p><img src="{{ $thumb }}" alt="{{ $name }}" class="zvn-thumb"></p>
+                <p>{!! $thumb !!}</p>
               </td>
               <td>{!! $status !!}</td>
               <td>{!! $createdHistory !!}</td>
