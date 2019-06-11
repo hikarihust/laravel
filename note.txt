@@ -143,3 +143,5 @@ showButtonAction: Show ra danh sách button
   Nâng cấp để nó mang tính mở rộng đối với từng Controller(có thể tùy chỉnh được số nút...)
   Ở mỗi button thì khác nhau ở 1 số thuộc tính như sau: class, title, icon, link(tên của route)
   Ở mỗi trang thì số nút cần hiển thị là khác nhau
+x_title:
+  Tối ưu mã nguỗn phần title ở mỗi box
