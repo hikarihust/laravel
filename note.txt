@@ -145,3 +145,9 @@ showButtonAction: Show ra danh sách button
   Ở mỗi trang thì số nút cần hiển thị là khác nhau
 x_title:
   Tối ưu mã nguỗn phần title ở mỗi box
+
+======================================= Xây dựng chức năng phân trang ====================================
+split pagination:
+  Tách phần mã nguồn phân trang
+  Không phải lúc nào phần phân trang cũng hiển thị:
+    ->Khi không có dữ liệu thì sẽ không hiển thị phân trang 
