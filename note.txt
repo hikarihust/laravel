@@ -151,3 +151,5 @@ split pagination:
   Tách phần mã nguồn phân trang
   Không phải lúc nào phần phân trang cũng hiển thị:
     ->Khi không có dữ liệu thì sẽ không hiển thị phân trang 
+paginate:
+  Laravel hỗ trợ chức năng phân trang, sử dụng phương thức paginate()
