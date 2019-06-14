@@ -175,3 +175,5 @@ custom view:
       </li>
   </ul>
   @endif
+fix pagination:
+  Đối với tham số là có tên là paginator thì không cần truyền -> Laravel sẽ tự hiểu
