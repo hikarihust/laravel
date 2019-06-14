@@ -153,3 +153,25 @@ split pagination:
     ->Khi không có dữ liệu thì sẽ không hiển thị phân trang 
 paginate:
   Laravel hỗ trợ chức năng phân trang, sử dụng phương thức paginate()
+custom view:
+  Từ dữ liệu đã được phân trang thì mình có thể xác định được tổng số phần tử, tổng số trang, tổng số phần tử
+  trên 1 trang, link phân trang(total(), lastPage(), perPage(), currentPage(), hasPages(), previousPageUrl(), 
+  nextPageUrl(), url($i)...)
+  Có thể customer lại giao diện phần tạo link phân trang
+  Keyword: Laravel custom pagination
+  Cấu trúc customize đơn giản
+  @if ($items->lastPage() > 1)
+  <ul class="pagination">
+      <li class="{{ ($items->currentPage() == 1) ? ' disabled' : '' }}">
+          <a href="{{ $items->url($items->currentPage()-1) }}">Previous</a>
+      </li>
+      @for ($i = 1; $i <= $items->lastPage(); $i++)
+          <li class="{{ ($items->currentPage() == $i) ? ' active' : '' }}">
+              <a href="{{ $items->url($i) }}">Trang {{ $i }}</a>
+          </li>
+      @endfor
+      <li class="{{ ($items->currentPage() == $items->lastPage()) ? ' disabled' : '' }}">
+          <a href="{{ $items->url($items->currentPage()+1) }}" >Next</a>
+      </li>
+  </ul>
+  @endif
