@@ -182,3 +182,7 @@ fix pagination:
 - countByStatus:
   Group by
   Biết cách sử dụng DB::raw() trong các trường hợp count, max, min...
+- showButtonFilter:
+  All, Active, Inactive
+  All ở vị trí đầu tiên
+  Tạo helper trong template để tạo mã html

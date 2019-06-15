@@ -2,6 +2,33 @@
 namespace App\Helpers;
 use Config;
 class Template {
+    public static function showButtonFilter ($countByStatus) {
+        $xhtml = null;
+
+        if (count($countByStatus) > 0) {
+            array_unshift($countByStatus, [
+                'count' => array_sum(array_column($countByStatus, 'count')),
+                'status' => 'All'
+            ]);
+
+            foreach ($countByStatus as $key => $value) {
+                $xhtml .= sprintf('<a href="#" type="button" class="btn btn-primary">
+                                    %s <span class="badge bg-white">%s</span>
+                                </a>', $value['status'], $value['count']);
+            }
+        }
+
+        return $xhtml;
+    }
+
+    //<a href="?filter_status=active"
+    //     type="button" class="btn btn-success">
+    // Active <span class="badge bg-white">2</span>
+    // </a><a href="?filter_status=inactive"
+    //     type="button" class="btn btn-success">
+    // Inactive <span class="badge bg-white">2</span>
+    // </a>
+
     public static function showItemHistory ($by, $time) {
         $xhtml = sprintf('<p><i class="fa fa-user"></i> %s</p>
                     <p><i class="fa fa-clock-o"></i> %s</p>', $by, date(Config::get('zvn.format.short_time'), strtotime($time)));
