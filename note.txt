@@ -191,3 +191,5 @@ fix pagination:
 - block:
   Xử lý trường họp khi mà trong DB xuất hiện thêm 1 status mới, chưa định nghĩa giao diện của nó trong config
     -> trong config, thêm 1 giá trị mới đó là default
+- link:
+  Gắn link cho các nút filter

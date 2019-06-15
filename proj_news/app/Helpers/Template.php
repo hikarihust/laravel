@@ -2,7 +2,7 @@
 namespace App\Helpers;
 use Config;
 class Template {
-    public static function showButtonFilter ($itemsStatusCount) {
+    public static function showButtonFilter ($controllerName, $itemsStatusCount) {
         $xhtml = null;
         $tmpStatus = Config::get('zvn.template.status');
 
@@ -15,12 +15,12 @@ class Template {
             foreach ($itemsStatusCount as $key => $item) {
                 $statusValue = $item['status'];
                 $statusValue = array_key_exists($statusValue, $tmpStatus) ? $statusValue : 'default';
-
                 $currentTemplateStatus = $tmpStatus[$statusValue];
+                $link = route($controllerName) . "?filter_status=" . $statusValue;
                 
-                $xhtml .= sprintf('<a href="#" type="button" class="btn btn-primary">
+                $xhtml .= sprintf('<a href="%s" type="button" class="btn btn-primary">
                                     %s <span class="badge bg-white">%s</span>
-                                </a>', $currentTemplateStatus['name'], $item['count']);
+                                </a>', $link, $currentTemplateStatus['name'], $item['count']);
             }
         }
 

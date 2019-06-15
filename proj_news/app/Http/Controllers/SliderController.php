@@ -21,8 +21,9 @@ class SliderController extends Controller
         view()->share('controllerName', $this->controllerName);
     }
 
-    public function index()
+    public function index(Request $request)
     {   
+        $this->params['filter']['status'] = $request->input('filter_status', 'all');
         $items = $this->model->listItems($this->params, ['task' => 'admin-list-items']);
         $itemsStatusCount = $this->model->countItems($this->params, ['task' => 'admin-count-items-group-by-status']);
 
