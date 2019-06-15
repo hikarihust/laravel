@@ -193,3 +193,5 @@ fix pagination:
     -> trong config, thêm 1 giá trị mới đó là default
 - link:
   Gắn link cho các nút filter
+- active: 
+  Khi nút Filter nào được nhấn thì nút đó phải được active
