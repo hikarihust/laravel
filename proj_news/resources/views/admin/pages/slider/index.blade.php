@@ -1,7 +1,7 @@
 @extends('admin.main')
 @php
 	use App\Helpers\Template as Template;
-	$xhtmlButtonFilter = Template::showButtonFilter($countByStatus); 
+	$xhtmlButtonFilter = Template::showButtonFilter($itemsStatusCount); 
 @endphp
 @section('content')
 <div class="page-header zvn-page-header clearfix">

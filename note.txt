@@ -167,7 +167,7 @@ custom view:
       </li>
       @for ($i = 1; $i <= $items->lastPage(); $i++)
           <li class="{{ ($items->currentPage() == $i) ? ' active' : '' }}">
-              <a href="{{ $items->url($i) }}">Trang {{ $i }}</a>
+              <a href={{ $items->url($i) }}">Trang {{ $i }}</a>
           </li>
       @endfor
       <li class="{{ ($items->currentPage() == $items->lastPage()) ? ' disabled' : '' }}">
@@ -188,3 +188,6 @@ fix pagination:
   Tạo helper trong template để tạo mã html
 - template status:
   Đồng nhất các giá trị hiển thị Active-Kích hoạt, Inactive - Chưa kích hoạt -> config giá trị cho status
+- block:
+  Xử lý trường họp khi mà trong DB xuất hiện thêm 1 status mới, chưa định nghĩa giao diện của nó trong config
+    -> trong config, thêm 1 giá trị mới đó là default

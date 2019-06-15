@@ -2,21 +2,25 @@
 namespace App\Helpers;
 use Config;
 class Template {
-    public static function showButtonFilter ($countByStatus) {
+    public static function showButtonFilter ($itemsStatusCount) {
         $xhtml = null;
         $tmpStatus = Config::get('zvn.template.status');
 
-        if (count($countByStatus) > 0) {
-            array_unshift($countByStatus, [
-                'count' => array_sum(array_column($countByStatus, 'count')),
+        if (count($itemsStatusCount) > 0) {
+            array_unshift($itemsStatusCount, [
+                'count' => array_sum(array_column($itemsStatusCount, 'count')),
                 'status' => 'all'
             ]);
 
-            foreach ($countByStatus as $key => $value) {
-                $currentStatus = $tmpStatus[$value['status']];
+            foreach ($itemsStatusCount as $key => $item) {
+                $statusValue = $item['status'];
+                $statusValue = array_key_exists($statusValue, $tmpStatus) ? $statusValue : 'default';
+
+                $currentTemplateStatus = $tmpStatus[$statusValue];
+                
                 $xhtml .= sprintf('<a href="#" type="button" class="btn btn-primary">
                                     %s <span class="badge bg-white">%s</span>
-                                </a>', $currentStatus['name'], $value['count']);
+                                </a>', $currentTemplateStatus['name'], $item['count']);
             }
         }
 
@@ -29,12 +33,13 @@ class Template {
         return $xhtml;
     }
 
-    public static function showItemStatus ($controllerName, $id, $status) {
+    public static function showItemStatus ($controllerName, $id, $statusValue) {
         $tmpStatus = Config::get('zvn.template.status');
-        $currentStatus = $tmpStatus[$status];
-        $link          = route($controllerName.'/status', ['status' => $status, 'id' => $id]);
-        $xhtml = sprintf('<a href="%s" type="button" class="btn btn-round %s">%s</a>', $link, $currentStatus['class'], $currentStatus['name']);
-
+        $statusValue = array_key_exists($statusValue, $tmpStatus) ? $statusValue : 'default';
+        $currentTemplateStatus = $tmpStatus[$statusValue];
+        $link          = route($controllerName.'/status', ['status' => $statusValue, 'id' => $id]);
+        
+        $xhtml = sprintf('<a href="%s" type="button" class="btn btn-round %s">%s</a>', $link, $currentTemplateStatus['class'], $currentTemplateStatus['name']);
         return $xhtml;
     }
 
