@@ -4,30 +4,24 @@ use Config;
 class Template {
     public static function showButtonFilter ($countByStatus) {
         $xhtml = null;
+        $tmpStatus = Config::get('zvn.template.status');
 
         if (count($countByStatus) > 0) {
             array_unshift($countByStatus, [
                 'count' => array_sum(array_column($countByStatus, 'count')),
-                'status' => 'All'
+                'status' => 'all'
             ]);
 
             foreach ($countByStatus as $key => $value) {
+                $currentStatus = $tmpStatus[$value['status']];
                 $xhtml .= sprintf('<a href="#" type="button" class="btn btn-primary">
                                     %s <span class="badge bg-white">%s</span>
-                                </a>', $value['status'], $value['count']);
+                                </a>', $currentStatus['name'], $value['count']);
             }
         }
 
         return $xhtml;
     }
-
-    //<a href="?filter_status=active"
-    //     type="button" class="btn btn-success">
-    // Active <span class="badge bg-white">2</span>
-    // </a><a href="?filter_status=inactive"
-    //     type="button" class="btn btn-success">
-    // Inactive <span class="badge bg-white">2</span>
-    // </a>
 
     public static function showItemHistory ($by, $time) {
         $xhtml = sprintf('<p><i class="fa fa-user"></i> %s</p>
@@ -36,10 +30,7 @@ class Template {
     }
 
     public static function showItemStatus ($controllerName, $id, $status) {
-        $tmpStatus = [
-            'active' => ['name' => 'Kích hoạt', 'class' => 'btn-success'],
-            'inactive' => ['name' => 'Chưa kích hoạt', 'class' => 'btn-info']
-        ];
+        $tmpStatus = Config::get('zvn.template.status');
         $currentStatus = $tmpStatus[$status];
         $link          = route($controllerName.'/status', ['status' => $status, 'id' => $id]);
         $xhtml = sprintf('<a href="%s" type="button" class="btn btn-round %s">%s</a>', $link, $currentStatus['class'], $currentStatus['name']);

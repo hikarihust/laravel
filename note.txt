@@ -186,3 +186,5 @@ fix pagination:
   All, Active, Inactive
   All ở vị trí đầu tiên
   Tạo helper trong template để tạo mã html
+- template status:
+  Đồng nhất các giá trị hiển thị Active-Kích hoạt, Inactive - Chưa kích hoạt -> config giá trị cho status
