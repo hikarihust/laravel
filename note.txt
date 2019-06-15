@@ -177,3 +177,8 @@ custom view:
   @endif
 fix pagination:
   Đối với tham số là có tên là paginator thì không cần truyền -> Laravel sẽ tự hiểu
+
+  ======================================= Xây dựng chức năng filter ====================================
+- countByStatus:
+  Group by
+  Biết cách sử dụng DB::raw() trong các trường hợp count, max, min...
