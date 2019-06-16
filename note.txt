@@ -195,3 +195,6 @@ fix pagination:
   Gắn link cho các nút filter
 - active: 
   Khi nút Filter nào được nhấn thì nút đó phải được active
+- filter:
+  Dựa vào status để lọc ra danh sách
+  Khi tồn tại giá trị filter-status và khác giá trị all thì sẽ tiến hành lọc dữ liệu
