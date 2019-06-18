@@ -202,3 +202,5 @@ fix pagination:
   ======================================= Xây dựng chức năng tìm kiếm ====================================
 - showAreaSearch:
   Tách ra phần xử lý hiển thị phần tìm kiếm
+- fieldInController:
+  Cấu hình tùy chỉnh linh hoạt phần SelectBox tìm kiếm

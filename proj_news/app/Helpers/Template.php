@@ -30,6 +30,18 @@ class Template {
 
     public static function showAreaSearch ($controllerName) {
         $xhtml = null;
+        $tmplField = Config::get('zvn.template.search');
+        $fieldInController = [
+            'default' => ['all', 'id', 'fullname'],
+            'slider' => ['all', 'id', 'description', 'link']
+        ];
+
+        $controllerName = (array_key_exists($controllerName, $fieldInController)) ? $controllerName : 'default';
+        $xhtmlField = null;
+
+        foreach ($fieldInController[$controllerName] as $field) {
+            $xhtmlField .= sprintf('<li><a href="#" class="select-field" data-field="%s">%s</a></li>', $field, $tmplField[$field]['name']);
+        }
 
         $xhtml = sprintf('<div class="input-group">
                             <div class="input-group-btn">
@@ -39,18 +51,7 @@ class Template {
                                 Search by All <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                    <li><a href="#"
-                                        class="select-field" data-field="all">Search by All</a></li>
-                                    <li><a href="#"
-                                        class="select-field" data-field="id">Search by ID</a></li>
-                                    <li><a href="#"
-                                        class="select-field" data-field="username">Search by Username</a>
-                                    </li>
-                                    <li><a href="#"
-                                        class="select-field" data-field="fullname">Search by Fullname</a>
-                                    </li>
-                                    <li><a href="#"
-                                        class="select-field" data-field="email">Search by Email</a></li>
+                                    %s
                                 </ul>
                             </div>
                             <input type="text" class="form-control" name="search_value" value="">
@@ -59,7 +60,7 @@ class Template {
                                 <button id="btn-search" type="button" class="btn btn-primary">Tìm kiếm</button>
                             </span>
                             <input type="hidden" name="search_field" value="all">
-                        </div>');
+                        </div>', $xhtmlField);
 
         return $xhtml;
     }
