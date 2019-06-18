@@ -31,10 +31,7 @@ class Template {
     public static function showAreaSearch ($controllerName) {
         $xhtml = null;
         $tmplField = Config::get('zvn.template.search');
-        $fieldInController = [
-            'default' => ['all', 'id', 'fullname'],
-            'slider' => ['all', 'id', 'description', 'link']
-        ];
+        $fieldInController = Config::get('zvn.config.search');
 
         $controllerName = (array_key_exists($controllerName, $fieldInController)) ? $controllerName : 'default';
         $xhtmlField = null;
@@ -87,22 +84,15 @@ class Template {
     }
 
     public static function showButtonAction ($controllerName, $id) {
-        $tmplButton = [
-            'edit'   => ['class' => 'btn-success', 'title' => 'Edit', 'icon' => 'fa-pencil', 'route-name' => $controllerName.'/form'],
-            'delete' => ['class' => 'btn-danger', 'title' => 'Delete', 'icon' => 'fa-trash', 'route-name' => $controllerName.'/delete'],
-            'info'   => ['class' => 'btn-info', 'title' => 'View', 'icon' => 'fa-pencil', 'route-name' => $controllerName.'/delete']
-        ];
-        $buttonInArea = [
-            'default' => ['edit', 'delete'],
-            'slider'  =>  ['edit', 'delete']
-        ];
+        $tmplButton = Config::get('zvn.template.button');
+        $buttonInArea = Config::get('zvn.config.button');
 
         $controllerName = (array_key_exists($controllerName, $buttonInArea)) ? $controllerName : 'default';
         $listButtons    = $buttonInArea[$controllerName]; 
         $xhtml          = '<div class="zvn-box-btn-filter">';
         foreach ($listButtons as $key => $btn) {
             $currentButton = $tmplButton[$btn];
-            $link = route($currentButton['route-name'], ['id' => $id]);
+            $link = route($controllerName . $currentButton['route-name'], ['id' => $id]);
             $xhtml .= sprintf('<a href="%s" type="button" class="btn btn-icon %s" data-toggle="tooltip" data-placement="top" 
                                 data-original-title="%s">
                                 <i class="fa %s"></i>

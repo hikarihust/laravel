@@ -204,3 +204,6 @@ fix pagination:
   Tách ra phần xử lý hiển thị phần tìm kiếm
 - fieldInController:
   Cấu hình tùy chỉnh linh hoạt phần SelectBox tìm kiếm
+- config:
+  Đưa phần fieldInController vào trong phần config
+  Tương tự như vậy điều chỉnh cho phần showButtonAction, phần cấu hình cho các Button
