@@ -28,7 +28,7 @@ class Template {
         return $xhtml;
     }
 
-    public static function showAreaSearch ($controllerName) {
+    public static function showAreaSearch ($controllerName, $paramsSearch) {
         $xhtml = null;
         $tmplField = Config::get('zvn.template.search');
         $fieldInController = Config::get('zvn.config.search');
@@ -40,22 +40,24 @@ class Template {
             $xhtmlField .= sprintf('<li><a href="#" class="select-field" data-field="%s">%s</a></li>', $field, $tmplField[$field]['name']);
         }
 
+        $searchField = in_array($paramsSearch['field'], $fieldInController[$controllerName]) ? $paramsSearch['field'] : 'all';
+
         $xhtml = sprintf('<div class="input-group">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default dropdown-toggle btn-active-field" data-toggle="dropdown" aria-expanded="false">
-                                    Search by All <span class="caret"></span>
+                                    %s <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                     %s
                                 </ul>
                             </div>
-                            <input type="text" class="form-control" name="search_value" value="">
+                            <input type="text" class="form-control" name="search_value" value="%s">
                             <input type="hidden" name="search_field" value="all">
                             <span class="input-group-btn">
                                 <button id="btn-clear-search" type="button" class="btn btn-success" style="margin-right: 0px">Xóa tìm kiếm</button>
                                 <button id="btn-search" type="button" class="btn btn-primary">Tìm kiếm</button>
                             </span>
-                        </div>', $xhtmlField);
+                        </div>', $tmplField[$searchField]['name'], $xhtmlField, $paramsSearch['value']);
 
         return $xhtml;
     }

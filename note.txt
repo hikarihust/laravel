@@ -214,3 +214,5 @@ fix pagination:
     trường nào -> javascript
 - btnSearch event:
   Viết sự kiện cho nút tìm kiếm khi nó được click vào
+- active:
+  Active giá trị selectBox ở ô tìm kiếm và giữ lại value đã nhập vào trong ô tìm kiếm
