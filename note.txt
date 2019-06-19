@@ -207,3 +207,8 @@ fix pagination:
 - config:
   Đưa phần fieldInController vào trong phần config
   Tương tự như vậy điều chỉnh cho phần showButtonAction, phần cấu hình cho các Button
+- search_field:
+  Khi người dùng tiến hành search thì cần phải biết người dùng tiến hành search theo field nào và giá trị search là 
+    bao nhiêu
+  Khi người dùng nhấn vào lựa chọn các giá trị trong SelectBox thì cần lấy được giá trị tên trường mà người dùng search là 
+    trường nào -> javascript

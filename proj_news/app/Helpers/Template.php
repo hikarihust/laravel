@@ -42,21 +42,19 @@ class Template {
 
         $xhtml = sprintf('<div class="input-group">
                             <div class="input-group-btn">
-                                <button type="button"
-                                    class="btn btn-default dropdown-toggle btn-active-field"
-                                    data-toggle="dropdown" aria-expanded="false">
-                                Search by All <span class="caret"></span>
+                                <button type="button" class="btn btn-default dropdown-toggle btn-active-field" data-toggle="dropdown" aria-expanded="false">
+                                    Search by All <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                     %s
                                 </ul>
                             </div>
                             <input type="text" class="form-control" name="search_value" value="">
+                            <input type="hidden" name="search_field" value="all">
                             <span class="input-group-btn">
-                                <button id="btn-clear" type="button" class="btn btn-success" style="margin-right: 0px">Xóa tìm kiếm</button>
+                                <button id="btn-clear-search" type="button" class="btn btn-success" style="margin-right: 0px">Xóa tìm kiếm</button>
                                 <button id="btn-search" type="button" class="btn btn-primary">Tìm kiếm</button>
                             </span>
-                            <input type="hidden" name="search_field" value="all">
                         </div>', $xhtmlField);
 
         return $xhtml;
