@@ -212,3 +212,5 @@ fix pagination:
     bao nhiêu
   Khi người dùng nhấn vào lựa chọn các giá trị trong SelectBox thì cần lấy được giá trị tên trường mà người dùng search là 
     trường nào -> javascript
+- btnSearch event:
+  Viết sự kiện cho nút tìm kiếm khi nó được click vào

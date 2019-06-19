@@ -14,4 +14,14 @@ $(document).ready(function() {
     	$inputSearchField.val(field);
 	});
 
+	$btnSearch.click(function() {
+
+		var pathname	= window.location.pathname;
+
+		let search_field = $inputSearchField.val();
+		let search_value = $inputSearchValue.val();
+
+		window.location.href = pathname + '?' + 'search_field='+ search_field + '&search_value=' + search_value;
+	});
+
 });
