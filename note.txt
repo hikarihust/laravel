@@ -220,3 +220,8 @@ fix pagination:
   Dựa vào các giá trị trên URL để lọc ra các phần tử phù hợp với các giá trị cần search(Lọc theo field cần search)
   Chia thành 2 trường hợp search đó là trường hợp người dùng chọn vào nút All và trường hợp thứ 2 đó là người dùng chọn search theo 
     1 trường nào đó(Cần kiểm tra tên field lấy từ trên URL có đúng hay không? nếu đúng thì cho phép search)
+- search by all:
+  Trong trường hợp mà giá trị của param search_field là all thì có nghĩa là vừa search theo id, name, description và link
+  Keyword: Laravel or where
+  Khi ban đầu để tìm kiếm là tìm kiếm theo trường name -> sau khi nhấn nút tìm kiếm xong và tiếp tục nhấn nút tìm kiếm thì lúc này
+    trang vẫn phải được tìm kiếm theo trường name...

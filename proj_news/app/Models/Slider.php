@@ -29,11 +29,14 @@ class Slider extends Model
 
             if ($params['search']['value'] !== '') {
                 if ($params['search']['field'] === 'all') {
-
+                    $query->where(function($query) use ($params) {
+                        foreach ($this->fieldsearchAccepted as $column) {
+                            $query->orWhere($column, 'LIKE', "%{$params['search']['value']}%");
+                        }
+                    });
                 } else if (in_array($params['search']['field'], $this->fieldsearchAccepted)) {
                     $query->where($params['search']['field'], 'LIKE', "%{$params['search']['value']}%");
                 }
-                
             }
             $result = $query->orderBy('id', 'desc')
                     ->paginate($params['pagination']['totalItemsPerPage']);

@@ -52,12 +52,12 @@ class Template {
                                 </ul>
                             </div>
                             <input type="text" class="form-control" name="search_value" value="%s">
-                            <input type="hidden" name="search_field" value="all">
+                            <input type="hidden" name="search_field" value="%s">
                             <span class="input-group-btn">
                                 <button id="btn-clear-search" type="button" class="btn btn-success" style="margin-right: 0px">Xóa tìm kiếm</button>
                                 <button id="btn-search" type="button" class="btn btn-primary">Tìm kiếm</button>
                             </span>
-                        </div>', $tmplField[$searchField]['name'], $xhtmlField, $paramsSearch['value']);
+                        </div>', $tmplField[$searchField]['name'], $xhtmlField, $paramsSearch['value'], $searchField);
 
         return $xhtml;
     }
