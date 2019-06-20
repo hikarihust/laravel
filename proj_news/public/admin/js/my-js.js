@@ -5,6 +5,9 @@ $(document).ready(function() {
 	let $inputSearchField = $("input[name  = search_field]");
 	let $inputSearchValue = $("input[name  = search_value]");
 
+	// Khi bắt đầu vào trang hay bất kỳ 1 hành động nào load lại trang thì gán giá trị trên field vào input ẩn inputSearchField
+	$inputSearchField.val(gup('search_field', window.location));
+
 	$("a.select-field").click(function(e) {
 		e.preventDefault();
 
@@ -25,3 +28,13 @@ $(document).ready(function() {
 	});
 
 });
+
+// Hàm lấy giá trị của 1 param bất kỳ trên URL
+function gup( name, url ) {
+	if (!url) url = location.href;
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp( regexS );
+	var results = regex.exec( url );
+	return results == null ? null : results[1];
+}

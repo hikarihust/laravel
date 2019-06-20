@@ -216,3 +216,7 @@ fix pagination:
   Viết sự kiện cho nút tìm kiếm khi nó được click vào
 - active:
   Active giá trị selectBox ở ô tìm kiếm và giữ lại value đã nhập vào trong ô tìm kiếm
+- search by field:
+  Dựa vào các giá trị trên URL để lọc ra các phần tử phù hợp với các giá trị cần search(Lọc theo field cần search)
+  Chia thành 2 trường hợp search đó là trường hợp người dùng chọn vào nút All và trường hợp thứ 2 đó là người dùng chọn search theo 
+    1 trường nào đó(Cần kiểm tra tên field lấy từ trên URL có đúng hay không? nếu đúng thì cho phép search)
