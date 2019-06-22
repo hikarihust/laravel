@@ -230,3 +230,7 @@ fix pagination:
   Đối tượng URLSearchParams được tạo ra từ window.location.search
   Người dùng nhập 1 giá trị nào đó thì mới tải lại trang và thực hiện tìm kiếm, còn không nhập gì mà nhấn tìm kiếm thì đưa ra trang
     thông báo
+- btnClearSearch event:
+  Khi thực hiện cho Button thực hiện xóa tìm kiếm thì field tìm kiếm sẽ quay về trạng thái rỗng(all), giá trị tìm kiếm cũng sẽ quay về
+    trạng thái rỗng
+  Filter thì không bị ảnh hưởng(giữ nguyên lại trạng thái filter)
