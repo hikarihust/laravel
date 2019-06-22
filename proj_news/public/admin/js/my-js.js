@@ -20,13 +20,25 @@ $(document).ready(function() {
 	$btnSearch.click(function() {
 
 		var pathname	= window.location.pathname;
+		let params 		= ['filter_status'];
+		let searchParams = new URLSearchParams(window.location.search);
+		
+		let link = "";
+		$.each(params, function(key, param){
+			if (searchParams.has(param)) {
+				link += param + "=" + searchParams.get(param) + "&";
+			}
+		});
 
 		let search_field = $inputSearchField.val();
 		let search_value = $inputSearchValue.val();
 
-		window.location.href = pathname + '?' + 'search_field='+ search_field + '&search_value=' + search_value;
+		if (search_value.replace(/\s/g,"") === "") {
+			alert("Nhập giá trị cần tìm kiếm!!");
+		} else {
+			window.location.href = pathname + '?' + link + 'search_field='+ search_field + '&search_value=' + search_value;
+		}
 	});
-
 });
 
 // Hàm lấy giá trị của 1 param bất kỳ trên URL

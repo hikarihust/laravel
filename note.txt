@@ -225,3 +225,8 @@ fix pagination:
   Keyword: Laravel or where
   Khi ban đầu để tìm kiếm là tìm kiếm theo trường name -> sau khi nhấn nút tìm kiếm xong và tiếp tục nhấn nút tìm kiếm thì lúc này
     trang vẫn phải được tìm kiếm theo trường name...
+- search and filter:
+  Kết hợp cả search và filter -> khi thực hiện tìm kiếm thì cần phải giữ lại trạng thái của filter -> js
+  Đối tượng URLSearchParams được tạo ra từ window.location.search
+  Người dùng nhập 1 giá trị nào đó thì mới tải lại trang và thực hiện tìm kiếm, còn không nhập gì mà nhấn tìm kiếm thì đưa ra trang
+    thông báo
