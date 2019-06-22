@@ -246,3 +246,9 @@ fix pagination:
 - Highlight:
   Hightlight từ khóa tìm kiếm ở các kết quả tìm được
   Tìm theo trường nào thì Hightlight theo trường đó
+
+  =========================================== Xây dựng chức năng Change status ========================================
+- change status:
+  Khi nhấn vào nút trạng thái của phần tử thì ta sẽ biết được trạng thái của phần tử là trạng thái nào, id là bao nhiêu rồi từ đó sẽ cập
+    nhật lại trạng thái cho phần tử
+  Từ giá trị tham số được truyền vào route thì ở method trong Controller có thể lấy được bằng đối tượng request 

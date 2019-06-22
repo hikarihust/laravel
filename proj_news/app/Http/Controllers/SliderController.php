@@ -45,11 +45,10 @@ class SliderController extends Controller
 
     public function status(Request $request)
     {   
-        echo $request->id;
-        echo "<br />";
-        echo $request->route('status');
-        echo "<br />";
-        return redirect()->route('slider');
+        $params['currentStatus'] = $request->status;
+        $params['id'] = $request->id;
+        $this->model->saveItem($params, ['task' => 'change-status']);
+        return redirect()->route($this->controllerName);
     }
 
     public function delete()
