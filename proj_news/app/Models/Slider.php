@@ -48,9 +48,23 @@ class Slider extends Model
     public function countItems($params = null, $options = null){
         $result = null;
         if ($options['task'] === 'admin-count-items-group-by-status') {
-            $result = self::select(DB::raw('count(id) as count, status'))
-                        ->groupBy('status')
-                        ->get()->toArray();
+            $query = self::select(DB::raw('count(id) as count, status'));
+                        
+            if ($params['search']['value'] !== '') {
+                if ($params['search']['field'] === 'all') {
+                    $query->where(function($query) use ($params) {
+                        foreach ($this->fieldsearchAccepted as $column) {
+                            $query->orWhere($column, 'LIKE', "%{$params['search']['value']}%");
+                        }
+                    });
+                } else if (in_array($params['search']['field'], $this->fieldsearchAccepted)) {
+                    $query->where($params['search']['field'], 'LIKE', "%{$params['search']['value']}%");
+                }
+            }
+
+            $query->groupBy('status');
+            $result = $query->get()->toArray();
+
         }
 
         return $result;

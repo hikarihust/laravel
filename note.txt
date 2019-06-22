@@ -234,3 +234,5 @@ fix pagination:
   Khi thực hiện cho Button thực hiện xóa tìm kiếm thì field tìm kiếm sẽ quay về trạng thái rỗng(all), giá trị tìm kiếm cũng sẽ quay về
     trạng thái rỗng
   Filter thì không bị ảnh hưởng(giữ nguyên lại trạng thái filter)
+- countByStatus:
+  Cập nhật lại các giá trị count của các nút Filter khi nhấn nút thực hiện tìm kiếm
