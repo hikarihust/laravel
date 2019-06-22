@@ -76,4 +76,10 @@ class Slider extends Model
             self::where('id', $params['id'])->update(['status' => $status]);
         }
     }
+
+    public function deleteItem($params = null, $options = null) {
+        if ($options['task'] === 'delete-item') {
+            self::where('id', $params['id'])->delete();
+        }
+    }
 }

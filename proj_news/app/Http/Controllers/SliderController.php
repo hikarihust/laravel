@@ -51,8 +51,10 @@ class SliderController extends Controller
         return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật trạng thái thành công!');
     }
 
-    public function delete()
+    public function delete(Request $request)
     {
-        return "SlideController - delete";
+        $params['id'] = $request->id;
+        $this->model->deleteItem($params, ['task' => 'delete-item']);
+        return redirect()->route($this->controllerName)->with('zvn_notify', 'Xóa phần tử thành công!');
     }
 }

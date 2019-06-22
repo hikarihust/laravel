@@ -255,3 +255,10 @@ fix pagination:
 - notify:
   Hiển thị lên câu thông báo khi cập nhật trạng thái cho phần tử
   Keyword: Redirecting With Flashed Session Data
+
+  =============================================== Xây dựng chức năng Delete ============================================
+- delete:
+  Xây dựng chức năng delete phần tử
+  Sau khi xóa phần tử xong thì redirect về trang list và hiển thị lên câu thông báo
+  Khi click vào nút delete thì cần hiển thị lên 1 hộp thoại để xác nhận xóa hay không
+  Keyword: display a confirmation dialog when clicking an <a> link
