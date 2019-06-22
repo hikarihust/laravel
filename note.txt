@@ -243,3 +243,6 @@ fix pagination:
 
   Ở đây ngoài cách đưa các giá trị lên URL để xử lý thì cũng có thể đưa các giá trị vào Submit Form với phương thức là POST để xử lý
     hoặc là đưa các giá trị vào trong Session
+- Highlight:
+  Hightlight từ khóa tìm kiếm ở các kết quả tìm được
+  Tìm theo trường nào thì Hightlight theo trường đó
