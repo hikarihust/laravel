@@ -262,3 +262,10 @@ fix pagination:
   Sau khi xóa phần tử xong thì redirect về trang list và hiển thị lên câu thông báo
   Khi click vào nút delete thì cần hiển thị lên 1 hộp thoại để xác nhận xóa hay không
   Keyword: display a confirmation dialog when clicking an <a> link
+
+  =============================================== Xây dựng chức năng Form ============================================
+- template: 
+  Xây dựng chức năng thêm mới 1 phần tử nào đó
+  Setting route có dạng là form/{id?} trong trường hợp có id thì là Edit còn không có id thì là thêm mới
+  Copy từ giao diện của index
+  Thay đổi icon quy về
