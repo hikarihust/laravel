@@ -5,16 +5,8 @@
   $xhtmlAreaSearch =  Template::showAreaSearch($controllerName, $params['search']);
 @endphp
 @section('content')
-<div class="page-header zvn-page-header clearfix">
-	<div class="zvn-page-header-title">
-		<h3>Danh sách Slider</h3>
-	</div>
-	<div class="zvn-add-new pull-right">
-  <a href="{{ route($controllerName . '/form') }}" class="btn btn-success"><i
-			class="fa fa-plus-circle"></i> Thêm mới</a>
-	</div>
-</div>
 
+@include('admin.templates.page_header', ['pageIndex' => true])
 @include('admin.templates.zvn_notify')
 
 <div class="row">

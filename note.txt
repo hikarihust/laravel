@@ -269,3 +269,5 @@ fix pagination:
   Setting route có dạng là form/{id?} trong trường hợp có id thì là Edit còn không có id thì là thêm mới
   Copy từ giao diện của index
   Thay đổi icon quy về
+- page header:
+  Tách phần giao diện của phần header page cho trang index và form
