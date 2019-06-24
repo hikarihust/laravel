@@ -1,16 +1,9 @@
 @php
   $pageTitle = 'Quản lý ' . ucfirst($controllerName);
-
-  $link = route($controllerName);
-  $icon = 'fa-arrow-left';
-  $title = 'Quay về';
+  $pageButton = sprintf('<a href="%s" class="btn btn-success"><i class="fa fa-arrow-left"></i> Quay về</a>', route($controllerName));
   if ($pageIndex) {
-    $link = route($controllerName . '/form');
-    $icon = 'fa-plus-circle';
-    $title = 'Thêm mới';
+    $pageButton = sprintf('<a href="%s" class="btn btn-success"><i class="fa fa-plus-circle"></i> Thêm mới</a>', route($controllerName . '/form'));
   }
-  
-  $pageButton = sprintf('<a href="%s" class="btn btn-success"><i class="fa %s"></i> %s</a>', $link, $icon, $title);
 @endphp
 
 <div class="page-header zvn-page-header clearfix">

@@ -36,9 +36,17 @@ class SliderController extends Controller
             ]);
     }
  
-    public function form($id = null)
+    public function form(Request $request)
     {   
-        return view($this->pathViewController . 'form');
+        $item = null;
+        if ($request->id) {
+            $params['id'] = $request->id;
+            $item = $this->model->getItem($params, ['task' => 'get-item']);
+        }else {
+        
+        }
+
+        return view($this->pathViewController . 'form', ['item' => $item]);
     }
 
     public function status(Request $request)

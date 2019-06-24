@@ -70,6 +70,16 @@ class Slider extends Model
         return $result;
     }
 
+    public function getItem($params = null, $options = null) {
+        $result = null;
+        if ($options['task'] === 'get-item') {
+            $result = self::select('id', 'name', 'description', 'status', 'link', 'thumb')
+                        ->where('id', $params['id'])->first()->toArray();
+        }
+
+        return $result;
+    }
+
     public function saveItem($params = null, $options = null) {
         if ($options['task'] === 'change-status') {
             $status = ($params['currentStatus'] === 'active') ? 'inactive' : 'active';
