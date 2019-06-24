@@ -275,3 +275,11 @@ fix pagination:
   Khi nhấn vào nút Edit thì cũng sẽ chuyển đến Form
   Từ giá trị id nhận được trong method form thì sẽ kiểm tra được đâu là trường hợp thêm mới và đâu là trường hợp Edit, từ id
     này sẽ lấy ra được thông tin phần tử muốn thực hiện việc Edit
+- collective:
+  Keyword: Laravel collective
+  Installation: composer require 'laravelcollective/html:^5.8.0'
+  Sau khi cài đặt xong thì có thể kiểm tra Form bằng cách:
+    {{ Form::open(['url' => 'foo/bar']) }}
+      <h3>test</h3>
+    {{ Form::close() }}
+  -> Lúc này trên view sẽ tự động sinh ra 1 thẻ input _token ẩn mà ko cần sử dụng @csrf như trong Form của Blade template
