@@ -1,10 +1,19 @@
 @extends('admin.main')
 @php
-  use App\Helpers\Template as Template;
-  $nameLabel = Form::label('name', 'Name', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']);
-  $nameInput = Form::text('name', $item['name'], ['class' => 'form-control col-md-6 col-xs-12']);
-  $descriptionLabel = Form::label('description', 'Description', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']);
-  $descriptionInput = Form::text('description', $item['description'], ['class' => 'form-control col-md-6 col-xs-12']);
+  use App\Helpers\Form as FormTemplate;
+  $formInputClass = config('zvn.template.form_input.class');
+  $formLabelClass = config('zvn.template.form_label.class');
+
+  $elements = [
+    [
+      'label' => Form::label('name', 'Name', ['class' => $formLabelClass]),
+      'element' => Form::text('name', $item['name'], ['class' => $formInputClass])
+    ],
+    [
+      'label' => Form::label('description', 'Description', ['class' => $formLabelClass]),
+      'element' => Form::text('description', $item['description'], ['class' => $formInputClass])
+    ]
+  ];
 
 @endphp
 @section('content')
@@ -24,18 +33,7 @@
                         'class' => 'form-horizontal form-label-left',
                         'id' => 'main-form'
                       ]) }}
-            <div class="form-group">
-              {!! $nameLabel !!}
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                {!! $nameInput !!}
-              </div>
-            </div>
-            <div class="form-group">
-                {!! $descriptionLabel !!}
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                {!! $descriptionInput !!}
-              </div>
-            </div>
+            {!! FormTemplate::show($elements); !!}
         {{ Form::close() }}
         {{-- 
           <div class="form-group">

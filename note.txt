@@ -285,3 +285,5 @@ fix pagination:
   -> Lúc này trên view sẽ tự động sinh ra 1 thẻ input _token ẩn mà ko cần sử dụng @csrf như trong Form của Blade template
 - name description:
   Biết cách tạo ra label và ô input bằng cách sử dụng Form collective
+- FormTemplate:
+  Tối ưu mã nguồn tạo ra các thành phần có trong Form bằng cách viết thêm helper hỗ trợ việc tạo ra các phần tử trong form
