@@ -49,6 +49,11 @@ class SliderController extends Controller
         return view($this->pathViewController . 'form', ['item' => $item]);
     }
 
+    public function save(Request $request)
+    {   
+        echo 'save';
+    }
+
     public function status(Request $request)
     {   
         $params['currentStatus'] = $request->status;

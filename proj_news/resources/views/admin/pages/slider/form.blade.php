@@ -1,6 +1,11 @@
 @extends('admin.main')
 @php
-	use App\Helpers\Template as Template;
+  use App\Helpers\Template as Template;
+  $nameLabel = Form::label('name', 'Name', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']);
+  $nameInput = Form::text('name', $item['name'], ['class' => 'form-control col-md-6 col-xs-12']);
+  $descriptionLabel = Form::label('description', 'Description', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']);
+  $descriptionInput = Form::text('description', $item['description'], ['class' => 'form-control col-md-6 col-xs-12']);
+
 @endphp
 @section('content')
 @include('admin.templates.page_header', ['pageIndex' => false])
@@ -11,17 +16,28 @@
 		<div class="x_panel">
       @include('admin.templates.x_title', ['title' => 'Form'])
       <div class="x_content">
-        {{ Form::open(['url' => 'foo/bar']) }}
-          <h3>test</h3>
-        {{ Form::close() }}
-        {{-- <form method="POST" action="http://lar_prepare.xyz/admin123/slider/save" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal form-label-left" id="main-form">
-          <input name="_token" type="hidden" value="dutQIgn8U38T7e7XMeOBAb7gy1so1xFoXAu3xK0y">
-          <div class="form-group">
-            <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <input class="form-control col-md-6 col-xs-12" name="name" type="text" value="Ưu đãi học phí" id="name">
+        {{ Form::open([
+                        'method' => 'POST',
+                        'url' => route("$controllerName/save"),
+                        'accept-charset' => 'UTF-8',
+                        'enctype' => 'multipart/form-data',
+                        'class' => 'form-horizontal form-label-left',
+                        'id' => 'main-form'
+                      ]) }}
+            <div class="form-group">
+              {!! $nameLabel !!}
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                {!! $nameInput !!}
+              </div>
             </div>
-          </div>
+            <div class="form-group">
+                {!! $descriptionLabel !!}
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                {!! $descriptionInput !!}
+              </div>
+            </div>
+        {{ Form::close() }}
+        {{-- 
           <div class="form-group">
             <label for="status" class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -30,12 +46,6 @@
                 <option value="active">Kích hoạt</option>
                 <option value="inactive" selected="selected">Chưa kích hoạt</option>
               </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="description" class="control-label col-md-3 col-sm-3 col-xs-12">Description</label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <input class="form-control col-md-6 col-xs-12" name="description" type="text" value="Tổng hợp các trương trình ưu đãi học phí hàng tuần..." id="description">
             </div>
           </div>
           <div class="form-group">
@@ -59,7 +69,7 @@
               <input class="btn btn-success" type="submit" value="Save">
             </div>
           </div>
-        </form> --}}
+        --}}
       </div>
 		</div>
 	</div>
