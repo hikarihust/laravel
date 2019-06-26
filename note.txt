@@ -290,3 +290,6 @@ fix pagination:
 - select button:
   Cấu trúc Form của submit button khác với cấu trúc của các ô input thông thường -> khi viết helper thì cần kiểm tra phần tử đó
     có phải là button hay không để xử lý định dạng cho button submit
+- formGroup:
+  Để cho vấn đề ifelse được thực hiện đơn giản thì viết thêm phương thức mới formGroup trong đó dùng switch để kiểm tra phần tử
+  phần tử trong Form và tạo ra cấu trúc html cho nó
