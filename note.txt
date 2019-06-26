@@ -287,3 +287,6 @@ fix pagination:
   Biết cách tạo ra label và ô input bằng cách sử dụng Form collective
 - FormTemplate:
   Tối ưu mã nguồn tạo ra các thành phần có trong Form bằng cách viết thêm helper hỗ trợ việc tạo ra các phần tử trong form
+- select button:
+  Cấu trúc Form của submit button khác với cấu trúc của các ô input thông thường -> khi viết helper thì cần kiểm tra phần tử đó
+    có phải là button hay không để xử lý định dạng cho button submit
