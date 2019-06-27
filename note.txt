@@ -293,3 +293,6 @@ fix pagination:
 - formGroup:
   Để cho vấn đề ifelse được thực hiện đơn giản thì viết thêm phương thức mới formGroup trong đó dùng switch để kiểm tra phần tử
   phần tử trong Form và tạo ra cấu trúc html cho nó
+- thumb:
+  Ô input nằm ở bên trong có kiểu là file
+  Đối với trường hợp Edit thì có tấm hình hiện tại do đó cần phải show ra tấm hình hiện tại của nó

@@ -1,6 +1,7 @@
 @extends('admin.main')
 @php
   use App\Helpers\Form as FormTemplate;
+  use App\Helpers\Template as Template;
   $formInputClass = config('zvn.template.form_input.class');
   $formLabelClass = config('zvn.template.form_label.class');
 
@@ -23,6 +24,12 @@
     [
       'label' => Form::label('link', 'Link', ['class' => $formLabelClass]),
       'element' => Form::text('link', $item['link'], ['class' => $formInputClass])
+    ],
+    [
+      'label' => Form::label('thumb', 'Thumb', ['class' => $formLabelClass]),
+      'element' => Form::file('thumb', ['class' => $formInputClass]),
+      'thumb' => (isset($item['thumb']) && ($item['thumb'])) ? Template::showItemThumb($controllerName, $item['thumb'], $item['name']) : null,
+      'type' => 'thumb'
     ],
     [
       'element' => Form::submit('Save', ['class' => 'btn btn-success']),
@@ -51,13 +58,6 @@
             {!! FormTemplate::show($elements); !!}
         {{ Form::close() }}
         {{-- 
-          <div class="form-group">
-            <label for="thumb" class="control-label col-md-3 col-sm-3 col-xs-12">Thumb</label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <input class="form-control col-md-6 col-xs-12" name="thumb" type="file" id="thumb">
-              <p style="margin-top: 50px;"><img src="http://lar_prepare.xyz/images/slider/LWi6hINpXz.jpeg" alt="Ưu đãi học phí" class="zvn-thumb"></p>
-            </div>
-          </div>
           <input name="id" type="hidden" value="3">
           <input name="thumb_current" type="hidden" value="LWi6hINpXz.jpeg">
         --}}
