@@ -296,3 +296,5 @@ fix pagination:
 - thumb:
   Ô input nằm ở bên trong có kiểu là file
   Đối với trường hợp Edit thì có tấm hình hiện tại do đó cần phải show ra tấm hình hiện tại của nó
+- hidden:
+  Thực hiện thêm vào các phần tử input ẩn

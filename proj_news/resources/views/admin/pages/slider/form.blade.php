@@ -8,6 +8,8 @@
   $statusValue = ['default' => 'Select status', 
                   'active' => config('zvn.template.status.active.name'), 
                   'inactive' => config('zvn.template.status.inactive.name')];
+  $inputHiddenID = Form::hidden('id', $item['id']);
+  $inputHiddenThumb = Form::hidden('thumb_current', $item['thumb']);
   $elements = [
     [
       'label' => Form::label('name', 'Name', ['class' => $formLabelClass]),
@@ -32,7 +34,7 @@
       'type' => 'thumb'
     ],
     [
-      'element' => Form::submit('Save', ['class' => 'btn btn-success']),
+      'element' => $inputHiddenID . $inputHiddenThumb . Form::submit('Save', ['class' => 'btn btn-success']),
       'type' => 'btn-submit' 
     ]
   ];
@@ -57,10 +59,6 @@
                       ]) }}
             {!! FormTemplate::show($elements); !!}
         {{ Form::close() }}
-        {{-- 
-          <input name="id" type="hidden" value="3">
-          <input name="thumb_current" type="hidden" value="LWi6hINpXz.jpeg">
-        --}}
       </div>
 		</div>
 	</div>
