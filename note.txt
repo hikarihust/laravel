@@ -298,3 +298,12 @@ fix pagination:
   Đối với trường hợp Edit thì có tấm hình hiện tại do đó cần phải show ra tấm hình hiện tại của nó
 - hidden:
   Thực hiện thêm vào các phần tử input ẩn
+
+  =============================================== Xây dựng chức năng Validate ============================================
+- basic:
+  Khi form gửi request đến save, ở đây trước khi thực hiện lưu dữ liệu vào trong database thì cần phải kiểm tra xem dữ liệu đó
+  có hợp lệ hay không
+  Khi nội dung nhập vào Form chưa hợp lệ thì trang form sẽ tiếp tục được tải lại và không thực hiện phần tiếp theo trong phương
+    thức save
+  Document: Form Request Validation
+            Available Validation Rules

@@ -51,7 +51,12 @@ class SliderController extends Controller
 
     public function save(Request $request)
     {   
-        echo 'save';
+        $validatedData = $request->validate([
+            'name' => 'required|min:5',
+            'description' => 'required',
+        ]);
+
+        echo "test";
     }
 
     public function status(Request $request)
