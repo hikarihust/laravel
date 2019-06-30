@@ -307,3 +307,7 @@ fix pagination:
     thức save
   Document: Form Request Validation
             Available Validation Rules
+- message:
+  In ra câu thông báo hiển thị lỗi
+  Document: Displaying The Validation Errors
+  bail: Không cần Validate các rule tiếp theo của trường được Validate khi có 1 rule đã fail

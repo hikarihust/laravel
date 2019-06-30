@@ -54,6 +54,7 @@ class SliderController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:5',
             'description' => 'required',
+            'link' => 'bail|required|min:5|url',
         ]);
 
         echo "test";

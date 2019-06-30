@@ -42,6 +42,7 @@
 @endphp
 @section('content')
 @include('admin.templates.page_header', ['pageIndex' => false])
+@include('admin.templates.error')
 
 <!--box-lists-->
 <div class="row">
