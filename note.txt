@@ -311,3 +311,11 @@ fix pagination:
   In ra câu thông báo hiển thị lỗi
   Document: Displaying The Validation Errors
   bail: Không cần Validate các rule tiếp theo của trường được Validate khi có 1 rule đã fail
+- SliderRequest:
+  Tách phần sử lý Validate ra thành 1 tập tin riêng để giảm thiểu mã nguồn nằm trong tập Controller
+  php artisan make:request SliderRequest
+  Khai báo các rule Validate
+  Authorizing Form Requests: Cấp quyền authorize() là return true
+  Customizing The Error Messages: Custom câu thông báo lỗi
+  Customizing The Validation Attributes
+  -> Biết cách tạo ra 1 tập tin Validate riêng và biết cách custom lại câu thông báo lỗi, các thuộc tính hiển thị ra phía ngoài người dùng
