@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use DB;
 
 class Slider extends Model
@@ -22,7 +23,6 @@ class Slider extends Model
     protected $crudNotAccepted = [
         '_token',
         'thumb_current',
-        'thumb'
     ];
 
     public function listItems($params = null, $options = null){
@@ -92,6 +92,11 @@ class Slider extends Model
         }
 
         if ($options['task'] === 'add-item') {
+            $thumb = $params['thumb'];
+            $params['thumb'] = Str::random(10) . '.' . $thumb->clientExtension();
+            $params['created_by'] = 'quang';
+            $params['created'] = date('Y-m-d');
+            $thumb->storeAs('slider', $params['thumb'], 'zvn_storage_image');
             $params = array_diff_key($params, array_flip($this->crudNotAccepted));
             self::insert($params);
         }

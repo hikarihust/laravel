@@ -328,3 +328,14 @@ fix pagination:
   -> Validate trường status có giá trị nằm trong hoặc là active hoặc là inactive
   array_flip(): Tạo ra 1 mảng mới trong đó thì giá trị của value và key được hoán đổi cho nhau
   Nếu sử dụng Eloquent Inserting & Updating Models thì giá trị của created_at và updated_at sẽ tự động được lưu
+- upload:
+  Khi thêm 1 slider nào đó thì cần phải thêm tấm hình cho slider đó
+  Validate kiểu của file là image, giới hạn max là bao nhiêu kb
+  Xử lý upload tấm hình lên server
+  Keyword:
+    Illuminate\Http\UploadedFile Object; Uploaded Files
+    helper(tạo ra 1 chuỗi string ramdom)
+    laravel storage change path upload
+  Khi sử dụng phương thức store() thì tập tin sẽ được up vào thư mục store/app
+  Khi lưu ảnh vào server thì đổi tên file bằng 1 tên ngẫu nhiên
+  Thay đổi nơi lưu tấm hình mà mình upload lên khi sử dụng phương thức storeAs() -> filesystems.php
