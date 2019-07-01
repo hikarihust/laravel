@@ -351,3 +351,6 @@ fix pagination:
   Khi validate trường name thì kiểm tra name có bị trùng hay không, nếu mà name đã có rồi thì sẽ không cho người dùng 
     thêm name đã bị trùng nữa
   Khi Edit thì validate unique không so sánh với name hiện tại của nó mà chỉ so sánh với các name khác
+- edit:
+  Có 2 trường hợp đó là có Edit và không Edit thumb
+  Trường hợp Edit mà upload tấm hình mới lên thì phải xóa tấm hình cũ ở trên server đi rồi upload hình ảnh mới

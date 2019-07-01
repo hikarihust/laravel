@@ -108,7 +108,16 @@ class Slider extends Model
         }
 
         if ($options['task'] === 'edit-item') {
-            echo 'edit-item';
+            if (isset($params['thumb']) && !empty($params['thumb'])) {
+                Storage::disk('zvn_storage_image')->delete($this->folderUpload . '/' . $params['thumb_current']);
+                $thumb = $params['thumb'];
+                $params['thumb'] = Str::random(10) . '.' . $thumb->clientExtension();
+                $thumb->storeAs($this->folderUpload, $params['thumb'], 'zvn_storage_image');
+            }
+            $params['modified_by'] = 'quang';
+            $params['modified'] = date('Y-m-d');
+            $params = array_diff_key($params, array_flip($this->crudNotAccepted));
+            self::where('id', $params['id'])->update($params);
         }
     }
 
