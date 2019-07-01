@@ -24,24 +24,25 @@ class SliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5',
-            'description' => 'required',
+            'name' => 'bail|required|min:5',
+            'description' => 'bail|required',
             'link' => 'bail|required|min:5|url',
+            'status' => 'bail|in:active,inactive',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Name không được rỗng',
-            'name.min' => 'Name :input chiều dài phải có ít nhất :min ký tự',
+            // 'name.required' => 'Name không được rỗng',
+            // 'name.min' => 'Name :input chiều dài phải có ít nhất :min ký tự',
         ];
     }
 
     public function attributes()
     {
         return [
-            'description' => 'Field Description: ',
+            // 'description' => 'Field Description: ',
         ];
     }
 }

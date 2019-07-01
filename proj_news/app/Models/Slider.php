@@ -19,6 +19,12 @@ class Slider extends Model
         'link'
     ];
 
+    protected $crudNotAccepted = [
+        '_token',
+        'thumb_current',
+        'thumb'
+    ];
+
     public function listItems($params = null, $options = null){
         $result = null;
         if ($options['task'] === 'admin-list-items') {
@@ -64,7 +70,6 @@ class Slider extends Model
 
             $query->groupBy('status');
             $result = $query->get()->toArray();
-
         }
 
         return $result;
@@ -84,6 +89,11 @@ class Slider extends Model
         if ($options['task'] === 'change-status') {
             $status = ($params['currentStatus'] === 'active') ? 'inactive' : 'active';
             self::where('id', $params['id'])->update(['status' => $status]);
+        }
+
+        if ($options['task'] === 'add-item') {
+            $params = array_diff_key($params, array_flip($this->crudNotAccepted));
+            self::insert($params);
         }
     }
 

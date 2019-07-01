@@ -319,3 +319,12 @@ fix pagination:
   Customizing The Error Messages: Custom câu thông báo lỗi
   Customizing The Validation Attributes
   -> Biết cách tạo ra 1 tập tin Validate riêng và biết cách custom lại câu thông báo lỗi, các thuộc tính hiển thị ra phía ngoài người dùng
+
+  =============================================== Xây dựng chức năng Add ============================================
+- insert: Thêm mới phần tử
+  Lưu thông tin của 1 phần tử
+  Keyword: insert
+  Đối với trường status thì cần phải Validate yêu cầu người dùng kích hoạt chọn kích hoạt hoặc là không kích hoạt
+  -> Validate trường status có giá trị nằm trong hoặc là active hoặc là inactive
+  array_flip(): Tạo ra 1 mảng mới trong đó thì giá trị của value và key được hoán đổi cho nhau
+  Nếu sử dụng Eloquent Inserting & Updating Models thì giá trị của created_at và updated_at sẽ tự động được lưu
