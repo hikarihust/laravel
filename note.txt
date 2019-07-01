@@ -343,3 +343,7 @@ fix pagination:
   Khi thực hiện xóa 1 slide nào đó thì hình ảnh của slide đó cũng phải xóa đi
   Để xóa tấm hình của slide thì cần phải biết tên của slide đó là gì
   Keyword: File storage
+
+  =============================================== Xây dựng chức năng Edit ============================================
+  - validate thumb:
+    Nếu mà là Edit thì không cần phải validate require trường thumb

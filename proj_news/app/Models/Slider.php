@@ -106,6 +106,10 @@ class Slider extends Model
             $params = array_diff_key($params, array_flip($this->crudNotAccepted));
             self::insert($params);
         }
+
+        if ($options['task'] === 'edit-item') {
+            echo 'edit-item';
+        }
     }
 
     public function deleteItem($params = null, $options = null) {
