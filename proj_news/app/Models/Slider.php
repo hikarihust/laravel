@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use DB;
 
 class Slider extends Model
 {
     protected $table = 'slider';
+    protected $folderUpload = 'slider';
     protected $primaryKey = 'id';
     public $timestamps = false;
     const CREATED_AT = 'created';
@@ -82,6 +84,10 @@ class Slider extends Model
                         ->where('id', $params['id'])->first()->toArray();
         }
 
+        if ($options['task'] === 'get-thumb') {
+            $result = self::select('id', 'thumb')->where('id', $params['id'])->first()->toArray();
+        }
+
         return $result;
     }
 
@@ -96,7 +102,7 @@ class Slider extends Model
             $params['thumb'] = Str::random(10) . '.' . $thumb->clientExtension();
             $params['created_by'] = 'quang';
             $params['created'] = date('Y-m-d');
-            $thumb->storeAs('slider', $params['thumb'], 'zvn_storage_image');
+            $thumb->storeAs($this->folderUpload, $params['thumb'], 'zvn_storage_image');
             $params = array_diff_key($params, array_flip($this->crudNotAccepted));
             self::insert($params);
         }
@@ -104,6 +110,8 @@ class Slider extends Model
 
     public function deleteItem($params = null, $options = null) {
         if ($options['task'] === 'delete-item') {
+            $item = self::getItem($params, ['task' => 'get-thumb']);
+            Storage::disk('zvn_storage_image')->delete($this->folderUpload . '/' . $item['thumb']);
             self::where('id', $params['id'])->delete();
         }
     }

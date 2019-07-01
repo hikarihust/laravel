@@ -339,3 +339,7 @@ fix pagination:
   Khi sử dụng phương thức store() thì tập tin sẽ được up vào thư mục store/app
   Khi lưu ảnh vào server thì đổi tên file bằng 1 tên ngẫu nhiên
   Thay đổi nơi lưu tấm hình mà mình upload lên khi sử dụng phương thức storeAs() -> filesystems.php
+- delete:
+  Khi thực hiện xóa 1 slide nào đó thì hình ảnh của slide đó cũng phải xóa đi
+  Để xóa tấm hình của slide thì cần phải biết tên của slide đó là gì
+  Keyword: File storage
