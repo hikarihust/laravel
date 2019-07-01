@@ -345,5 +345,9 @@ fix pagination:
   Keyword: File storage
 
   =============================================== Xây dựng chức năng Edit ============================================
-  - validate thumb:
+- validate thumb:
     Nếu mà là Edit thì không cần phải validate require trường thumb
+- validate name:
+  Khi validate trường name thì kiểm tra name có bị trùng hay không, nếu mà name đã có rồi thì sẽ không cho người dùng 
+    thêm name đã bị trùng nữa
+  Khi Edit thì validate unique không so sánh với name hiện tại của nó mà chỉ so sánh với các name khác
