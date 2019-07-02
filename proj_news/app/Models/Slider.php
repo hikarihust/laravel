@@ -98,34 +98,43 @@ class Slider extends Model
         }
 
         if ($options['task'] === 'add-item') {
-            $thumb = $params['thumb'];
-            $params['thumb'] = Str::random(10) . '.' . $thumb->clientExtension();
             $params['created_by'] = 'quang';
             $params['created'] = date('Y-m-d');
-            $thumb->storeAs($this->folderUpload, $params['thumb'], 'zvn_storage_image');
-            $params = array_diff_key($params, array_flip($this->crudNotAccepted));
-            self::insert($params);
+            $params['thumb'] = $this->_uploadThumb($params['thumb']);
+            self::insert($this->_prepareParams($params));
         }
 
         if ($options['task'] === 'edit-item') {
             if (isset($params['thumb']) && !empty($params['thumb'])) {
-                Storage::disk('zvn_storage_image')->delete($this->folderUpload . '/' . $params['thumb_current']);
-                $thumb = $params['thumb'];
-                $params['thumb'] = Str::random(10) . '.' . $thumb->clientExtension();
-                $thumb->storeAs($this->folderUpload, $params['thumb'], 'zvn_storage_image');
+                $this->_deleteThumb($params['thumb_current']);
+                $params['thumb'] = $this->_uploadThumb($params['thumb']);
             }
             $params['modified_by'] = 'quang';
             $params['modified'] = date('Y-m-d');
-            $params = array_diff_key($params, array_flip($this->crudNotAccepted));
-            self::where('id', $params['id'])->update($params);
+            self::where('id', $params['id'])->update($this->_prepareParams($params));
         }
     }
 
     public function deleteItem($params = null, $options = null) {
         if ($options['task'] === 'delete-item') {
             $item = self::getItem($params, ['task' => 'get-thumb']);
-            Storage::disk('zvn_storage_image')->delete($this->folderUpload . '/' . $item['thumb']);
+            $this->_deleteThumb($item['thumb']);
             self::where('id', $params['id'])->delete();
         }
+    }
+
+    private function _uploadThumb($thumbObj) {
+        $thumbName = Str::random(10) . '.' . $thumbObj->clientExtension();
+        $thumbObj->storeAs($this->folderUpload, $thumbName, 'zvn_storage_image');
+
+        return $thumbName;
+    }
+
+    private function _deleteThumb($thumbName) {
+        Storage::disk('zvn_storage_image')->delete($this->folderUpload . '/' . $thumbName);
+    }
+
+    private function _prepareParams($params) {
+        return $params = array_diff_key($params, array_flip($this->crudNotAccepted));
     }
 }
