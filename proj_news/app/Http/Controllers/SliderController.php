@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Slider as MainModel;
+use App\Models\SliderModel as MainModel;
 use App\Http\Requests\SliderRequest as MainRequest;
 
 class SliderController extends Controller

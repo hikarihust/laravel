@@ -358,3 +358,5 @@ fix pagination:
   Làm gọn lại phần xử lý upload tập tin: Xóa và upload tập tin
   Khi lưu dữ dữ liệu chứa trong biến $params thì đều thực hiện xóa đi các field mà không cần insert
   Khi upload hình ảnh thì đối tượng thumb ngoài phương thức storeAs() thì có thể dùng phương thức đó là move()
+- AdminModel:
+  Tạo thêm AdminModel để định nghĩa những phương thức dùng chung
