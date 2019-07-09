@@ -12,6 +12,7 @@
 */
 // $prefixAdmin = config('zvn.url.prefix_admin');
 $prefixAdmin = Config::get('zvn.url.prefix_admin', 'admin');
+$prefixNews = Config::get('zvn.url.prefix_news', 'news68');
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -40,7 +41,7 @@ $prefixAdmin = Config::get('zvn.url.prefix_admin', 'admin');
 //         return "/admin/category";
 //     });
 // });
-
+// Admin
 Route::group(['prefix' => $prefixAdmin], function () {
     // =========================== DASHBOARD ==============================
     $prefix = 'dashboard';
@@ -62,5 +63,16 @@ Route::group(['prefix' => $prefixAdmin], function () {
         Route::get('delete/{id}', ['as' => $controllerName . '/delete','uses' => $controller . 'delete'])->where('id', '[0-9]+');
         Route::get('change-status-{status}/{id}', ['as' => $controllerName . '/status','uses' => $controller . 'status']);
     });
+});
 
+// News
+Route::group(['prefix' => $prefixNews], function () {
+    // =========================== HOMEPAGE ==============================
+    // config để homepage có url là /news
+    $prefix = '';
+    $controllerName = 'home';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('', ['as' => $controllerName, 'uses' => $controller . 'index']);
+    });
 });

@@ -360,3 +360,7 @@ fix pagination:
   Khi upload hình ảnh thì đối tượng thumb ngoài phương thức storeAs() thì có thể dùng phương thức đó là move()
 - AdminModel:
   Tạo thêm AdminModel để định nghĩa những phương thức dùng chung
+
+  =============================================== Hiển thị Slider ngoài Frontend ============================================
+- route:
+  Tạo link cho trang home
