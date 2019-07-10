@@ -374,3 +374,6 @@ fix pagination:
       cũng được
     -> Viết code để có thể dễ dàng tái sử dụng nó được -> tách slide ra thành 1 khối(block)
   Lấy dữ liệu và truyền ra ngoài view
+- show slider:
+  Đổ dữ liệu slider ra ngoài view
+  Khi có nhiều hơn 1 cái slide thì mới hiển thị 2 nút Next và Previous
