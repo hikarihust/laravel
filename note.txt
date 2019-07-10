@@ -366,3 +366,11 @@ fix pagination:
   Tạo link cho trang home
 - theme:
   Nhúng giao diện cho trang home
+- get slider:
+  Có 1 số nơi như ở trang chủ của mình thì cần dùng Slider, nhưng qua 1 số trang khác như Category hay hiển thị chi tiết
+    1 bài viết nào đó thì nó cũng không cần Slide, tuy nhiên sau 1 time nào đó thì chưa chắc chắn rằng liệu người dùng
+    có muốn dùng hay không
+    -> Phần slider nó có thể xuất hiện ở phần Category cũng được hay cũng có thể xuất hiện ở phần chi tiết 1 bài viết 
+      cũng được
+    -> Viết code để có thể dễ dàng tái sử dụng nó được -> tách slide ra thành 1 khối(block)
+  Lấy dữ liệu và truyền ra ngoài view
