@@ -377,3 +377,16 @@ fix pagination:
 - show slider:
   Đổ dữ liệu slider ra ngoài view
   Khi có nhiều hơn 1 cái slide thì mới hiển thị 2 nút Next và Previous
+
+  =============================================== Hiển thị Category ngoài Frontend ============================================
+- admin:
+  Xây dựng phần quản lý Category rồi sau đó hiển thị nó ra ngoài trang chủ
+  Khai báo route
+  Khai báo Controller
+  Khai báo Model
+  Khai báo request
+  Khai báo nơi chứa view
+  Khai báo phần cònig search(khai báo cho box search) và button cho Category:
+    'category' => ['all', 'id', 'name']
+    'category'  =>  ['edit', 'delete']
+  form: Không còn biến inputHiddenThumb
