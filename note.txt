@@ -390,3 +390,8 @@ fix pagination:
     'category' => ['all', 'id', 'name']
     'category'  =>  ['edit', 'delete']
   form: Không còn biến inputHiddenThumb
+- frontend:
+  Đổ category ra thành menu ở phía ngoài frontend
+  Danh sách menu ở trên các view của frontend là được lặp lại(home,category, article...)
+    Do đó nếu viết phần lấy ra danh sách menu trên Controller để truyền ra ngoài view thì phần code của ta sẽ bị lặp lại
+    =>Từ view(elements), gọi trực tiếp đến CategoryModel để lấy ra được danh sách category để hiển thị mà không cần thông qua Controller
