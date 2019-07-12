@@ -407,3 +407,8 @@ fix pagination:
 - change isHome:
   Thực hiện thay đổi trạng thái của is_home trên trang quản lý category
   Tương tự như chức năng thay đổi status
+
+ =============================================== Cấu hình kiểu hiển thị của Category ============================================
+- fix image:
+  Tách phần hiển thị nội dung trang index thành các block
+  Trong tập tin index nó cũng có nhiều phần gộp lại(category) -> tách ra làm các children
