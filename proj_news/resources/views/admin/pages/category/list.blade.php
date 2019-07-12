@@ -11,6 +11,7 @@
           <th class="column-title">#</th>
           <th class="column-title">Name</th>
           <th class="column-title">Trạng thái</th>
+          <th class="column-title">Hiển thị Home</th>
           <th class="column-title">Tạo mới</th>
           <th class="column-title">Chỉnh sửa</th>
           <th class="column-title">Hành động</th>
@@ -25,6 +26,7 @@
               $id          = $val->id;
               $name        = Highlight::show($val->name, $params['search'], 'name');
               $status      = Template::showItemStatus($controllerName, $id, $val->status);
+              $isHome      = Template::showItemIsHome($controllerName, $id, $val->is_home);
               $createdHistory   = Template::showItemHistory($val->created_by, $val->created);
               $modifiedHistory  = Template::showItemHistory($val->modified_by, $val->created);
               $listBtnAction    = Template::showButtonAction($controllerName, $id);
@@ -33,6 +35,7 @@
             <td> {{ $index }} </td>
               <td width="40%">{!! $name !!}</td>
               <td>{!! $status !!}</td>
+              <td>{!! $isHome !!}</td>
               <td>{!! $createdHistory !!}</td>
               <td>{!! $modifiedHistory !!}</td>
               <td class="last">{!! $listBtnAction !!}</td>

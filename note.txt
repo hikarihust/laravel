@@ -395,3 +395,12 @@ fix pagination:
   Danh sách menu ở trên các view của frontend là được lặp lại(home,category, article...)
     Do đó nếu viết phần lấy ra danh sách menu trên Controller để truyền ra ngoài view thì phần code của ta sẽ bị lặp lại
     =>Từ view(elements), gọi trực tiếp đến CategoryModel để lấy ra được danh sách category để hiển thị mà không cần thông qua Controller
+
+ =============================================== Cấu hình Category ngoài trang chủ ============================================
+- show isHome:
+  Hiển thị cột isHome lên trang quản lý category
+  Giá trị của trường is_home là yes/no
+  Trên trang chủ thì có 1 nơi để hiển thị lên các bài viết trong 1 category nào đó, không phải là tất cả các category đều cho hiển thị 
+    ngoài trang chủ -> chỉ có những category nào có trường is_home có giá trị là yes thì mới cho hiển thị lên trên đó
+  Bổ sung phần is_home trong phần quản lý của category(tương tự như phần trạng thái của 1 category nào đó)
+    yes: Hiển thị, no: Không hiển thị

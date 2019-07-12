@@ -19,7 +19,7 @@ class CategoryModel extends AdminModel
     public function listItems($params = null, $options = null){
         $result = null;
         if ($options['task'] === 'admin-list-items') {
-            $query = $this->select('id', 'name', 'status', 'created', 'created_by', 'modified', 'modified_by');    
+            $query = $this->select('id', 'name', 'status', 'is_home', 'created', 'created_by', 'modified', 'modified_by');    
             if ($params['filter']['status'] !== 'all') {
                 $query->where('status', '=', $params['filter']['status']);
             }
