@@ -90,6 +90,11 @@ class CategoryModel extends AdminModel
             self::where('id', $params['id'])->update(['status' => $status]);
         }
 
+        if ($options['task'] === 'change-is-home') {
+            $isHome = ($params['currentIsHome'] === 'yes') ? 'no' : 'yes';
+            self::where('id', $params['id'])->update(['is_home' => $isHome]);
+        }
+
         if ($options['task'] === 'add-item') {
             $params['created_by'] = 'quang';
             $params['created'] = date('Y-m-d');

@@ -404,3 +404,6 @@ fix pagination:
     ngoài trang chủ -> chỉ có những category nào có trường is_home có giá trị là yes thì mới cho hiển thị lên trên đó
   Bổ sung phần is_home trong phần quản lý của category(tương tự như phần trạng thái của 1 category nào đó)
     yes: Hiển thị, no: Không hiển thị
+- change isHome:
+  Thực hiện thay đổi trạng thái của is_home trên trang quản lý category
+  Tương tự như chức năng thay đổi status
