@@ -425,3 +425,7 @@ fix pagination:
   Khi thay đổi giá trị kiểu hiển thị của Category ở SelectBox thì sẽ thực hiện thay đổi ở database 
   Khi thay đổi options trong SelectBox thì sẽ gọi đến route khai báo trong SelectBox
     -> javascript
+- show category:
+  Sau khi ở trang chủ bổ xung thêm chức năng thay đổi kiểu hiển thị category -> load kiểu giao diện của các category lên trên view 
+    index dựa vào giá trị kiểu hiển thị của từng category
+  Thứ tự hiển thị sẽ là grid -> list hoặc ngược lại, do đó ở câu lệnh truy vấn query có thể dùng orderBy theo giá trị của display
