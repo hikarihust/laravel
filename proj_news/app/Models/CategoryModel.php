@@ -104,6 +104,11 @@ class CategoryModel extends AdminModel
             self::where('id', $params['id'])->update(['is_home' => $isHome]);
         }
 
+        if ($options['task'] === 'change-display') {
+            $display = $params['currentDisplay'];
+            self::where('id', $params['id'])->update(['display' => $display]);
+        }
+
         if ($options['task'] === 'add-item') {
             $params['created_by'] = 'quang';
             $params['created'] = date('Y-m-d');

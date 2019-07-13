@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 	let $inputSearchField = $("input[name  = search_field]");
 	let $inputSearchValue = $("input[name  = search_value]");
+	let $selectChangeAttr = $("select[name = select_change_attr]");
 
 	// Khi bắt đầu vào trang hay bất kỳ 1 hành động nào load lại trang thì gán giá trị trên field vào input ẩn inputSearchField
 	// $inputSearchField.val(gup('search_field', window.location));
@@ -58,6 +59,12 @@ $(document).ready(function() {
 	// Khi nhấn vào nút Button delete phần tử
 	$('.btn-delete').on('click', function() {
 		return confirm('Bạn có chắc xóa phần tử này hay không');
+	})
+	// Khi thay đổi ở SelectBox để thay đổi giá trị kiểu hiển thị Category lên trên view index
+	$selectChangeAttr.on('change', function() {
+		let selectValue = $(this).val();
+		let url = $(this).data('url');
+		window.location.href = url.replace('value_new', selectValue);
 	})
 });
 

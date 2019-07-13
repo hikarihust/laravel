@@ -82,6 +82,15 @@ class CategoryController extends Controller
         return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật trạng thái hiển thị trang chủ thành công!');
     }
 
+    public function display(Request $request)
+    {   
+        $params['currentDisplay'] = $request->display;
+        $params['id'] = $request->id;
+        $this->model->saveItem($params, ['task' => 'change-display']);
+        
+        return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật kiểu hiện thị thành công!');
+    }
+
     public function delete(Request $request)
     {
         $params['id'] = $request->id;

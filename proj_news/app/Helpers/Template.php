@@ -94,8 +94,9 @@ class Template {
     }
 
     public static function showItemSelect ($controllerName, $id, $displayValue) {
+        $link = route($controllerName .'/display', ['display' => 'value_new', 'id' => $id]);
         $tmplDisplay = Config::get('zvn.template.display');
-        $xhtml = sprintf('<select name="select_change_attr" class="form-control">');
+        $xhtml = sprintf('<select name="select_change_attr" data-url="%s" class="form-control">', $link);
 
         foreach ($tmplDisplay as $key => $value) {
             $xhtmlSelected = '';

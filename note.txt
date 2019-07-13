@@ -421,3 +421,7 @@ fix pagination:
 - show display:
   Xây dựng thêm phần hiển thị để cho biết category đó là đang được hiển thị theo kiểu nào(list or grid) trên index 
   Cho nó được hiển thị bởi SelectBox để có thể hiển thị được nhiều kiểu khác nhau
+- change display:
+  Khi thay đổi giá trị kiểu hiển thị của Category ở SelectBox thì sẽ thực hiện thay đổi ở database 
+  Khi thay đổi options trong SelectBox thì sẽ gọi đến route khai báo trong SelectBox
+    -> javascript
