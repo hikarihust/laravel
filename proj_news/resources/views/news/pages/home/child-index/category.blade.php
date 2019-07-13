@@ -9,7 +9,7 @@
 		<div class="post_item post_h_large">
 			<div class="row">
 				<div class="col-lg-5">
-				<div class="post_image"><img src="{{asset('news/images/article/e7YyFZJCc8.jpeg')}}"
+					<div class="post_image"><img src="{{asset('news/images/article/e7YyFZJCc8.jpeg')}}"
 						alt="images/article/e7YyFZJCc8.jpeg"
 						class="img-fluid w-100"></div>
 				</div>
@@ -79,7 +79,7 @@
 		<div class="post_item post_h_large">
 			<div class="row">
 				<div class="col-lg-5">
-				<div class="post_image"><img src="{{asset('news/images/article/TpcocqUjob.png')}}"
+					<div class="post_image"><img src="{{asset('news/images/article/TpcocqUjob.png')}}"
 						alt="images/article/TpcocqUjob.png"
 						class="img-fluid w-100"></div>
 				</div>
@@ -114,7 +114,7 @@
 		<div class="post_item post_h_large">
 			<div class="row">
 				<div class="col-lg-5">
-				<div class="post_image"><img src="{{asset('news/images/article/L3Yuzln8II.png')}}"
+					<div class="post_image"><img src="{{asset('news/images/article/L3Yuzln8II.png')}}"
 						alt="images/article/L3Yuzln8II.png"
 						class="img-fluid w-100"></div>
 				</div>

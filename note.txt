@@ -412,3 +412,9 @@ fix pagination:
 - fix image:
   Tách phần hiển thị nội dung trang index thành các block
   Trong tập tin index nó cũng có nhiều phần gộp lại(category) -> tách ra làm các children
+- get category:
+  Lấy ra các category được phép xuất hiện ngoài trang chủ(index)
+  Trong phần category hiển thị ở trên view index thì có 2 loại view đó là: 
+    Những bài viết có mỗi bài viết hiển thị ở trong một dòng(loại list)
+    Những bài viết có 2 bài viết hiển thị ở trong 1 dòng(loại grid)
+    -> Phải xây dựng trên phần quản lý category là category đó hiển thị lên trên trang index là loại list hay là grid
