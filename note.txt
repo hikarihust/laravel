@@ -429,3 +429,16 @@ fix pagination:
   Sau khi ở trang chủ bổ xung thêm chức năng thay đổi kiểu hiển thị category -> load kiểu giao diện của các category lên trên view 
     index dựa vào giá trị kiểu hiển thị của từng category
   Thứ tự hiển thị sẽ là grid -> list hoặc ngược lại, do đó ở câu lệnh truy vấn query có thể dùng orderBy theo giá trị của display
+
+ =============================================== Xây dựng chức năng Quản lý bài viết ============================================
+
+- clone article: Tương tự cũng giống như các phần quản lý khác
+  Gắn link cho slidebar: Để khi click vào trên menu thì nó sẽ ra phần quản lý
+  Chuẩn bị hình ảnh
+  Khai báo Router
+  Cấu hình cho article trong phần zvn.php(search, button và form_ckeditor)
+    form_ckeditor: Khi thêm mới thì nội dung của bài viết có thể định dạng như in đậm, nghiêng...
+  Thêm CKEDITOR
+    CKEditor 4
+  ArticleController
+  ArticleRequest

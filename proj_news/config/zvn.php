@@ -16,6 +16,9 @@ return [
         'form_label' => [
             'class' => 'control-label col-md-3 col-sm-3 col-xs-12'
         ],
+        'form_ckeditor' => [
+            'class' => 'form-control col-md-6 col-xs-12 ckeditor'
+        ],
         'status' => [
             'all' => ['name' => 'Tất cả phần tử', 'class' => 'btn-success'],
             'active' => ['name' => 'Kích hoạt', 'class' => 'btn-success'],
@@ -52,12 +55,14 @@ return [
         'search' => [
             'default' => ['all', 'id', 'fullname'],
             'slider' => ['all', 'id', 'name', 'description', 'link'],
-            'category' => ['all', 'id', 'name']
+            'category' => ['all', 'id', 'name'],
+            'article' => ['all', 'name', 'content']
         ],
         'button' => [
             'default' => ['edit', 'delete'],
             'slider'  =>  ['edit', 'delete'],
-            'category'  =>  ['edit', 'delete']
+            'category'  =>  ['edit', 'delete'],
+            'article'  =>  ['edit', 'delete']
         ]
     ]
 ];
