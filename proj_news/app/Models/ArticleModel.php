@@ -77,7 +77,7 @@ class ArticleModel extends AdminModel
     public function getItem($params = null, $options = null) {
         $result = null;
         if ($options['task'] === 'get-item') {
-            $result = self::select('id', 'name', 'content', 'status', 'thumb')
+            $result = self::select('id', 'name', 'content', 'status', 'thumb', 'category_id')
                         ->where('id', $params['id'])->first()->toArray();
         }
 

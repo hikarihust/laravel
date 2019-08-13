@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ArticleModel as MainModel;
+use App\Models\CategoryModel;
 use App\Http\Requests\ArticleRequest as MainRequest;
 
 class ArticleController extends Controller
@@ -42,11 +43,15 @@ class ArticleController extends Controller
         if ($request->id) {
             $params['id'] = $request->id;
             $item = $this->model->getItem($params, ['task' => 'get-item']);
-        }else {
-        
         }
 
-        return view($this->pathViewController . 'form', ['item' => $item]);
+        $categoryModel = new CategoryModel();
+        $itemsCategory = $categoryModel->listItems(null, ['task' => 'admin-list-items-in-selectbox']);
+
+        return view($this->pathViewController . 'form', [
+            'item' => $item,
+            'itemsCategory' => $itemsCategory
+            ]);
     }
 
     public function save(MainRequest $request)
