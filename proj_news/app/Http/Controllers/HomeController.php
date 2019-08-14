@@ -56,7 +56,7 @@ class HomeController extends Controller
         $categoryModel = new CategoryModel();
         $itemsCategory = $categoryModel->listItems(null, ['task' => 'news-list-items-is-home']);
         $itemsCategory = new Collection($itemsCategory);
-        $itemsCategory = $itemsCategory->groupBy('id')->toArray();
+        $itemsCategory = $itemsCategory->groupBy('IdCategory')->toArray();
         $tmpCategory   = array();
         $tmpArticle    = array();
         $tmpItem       = array();
