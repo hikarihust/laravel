@@ -10,7 +10,7 @@
 				<div class="col-lg-9">
 					<div class="main_content">
 						<!-- Featured -->
-						@include('news.block.featured', ['itemsFeatured' => array()])
+						@include('news.block.featured', ['items' => $itemsFeature])
 						<!-- Category -->
 						@include('news.pages.home.child-index.category')
 					</div>

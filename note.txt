@@ -458,3 +458,7 @@ fix pagination:
 - change featured: Xử lý thay đổi giá trị kiểu bài viết
   ArticleController -> bổ sung type()
   ArticleModel -> Save đối với trường hợp change-type
+- get featured: 
+  Lấy ra danh sách các bài viết nổi bật để hiển thị lên trang chủ
+  Bài viết nổi bật thì cho hiển thị lên trang chủ 3 bài bao gồm 1 bài viết bên tay trái với hình ảnh lớn, 2 bài bên tay phải với hình
+    ảnh nhỏ

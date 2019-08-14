@@ -5,7 +5,7 @@
 				<div class="col">
 					<div class="section_title_container d-flex flex-row align-items-start justify-content-start">
 						<div>
-							<div class="section_title">Featured Posts</div>
+							<div class="section_title">Bài viết nổi bật</div>
 						</div>
 						<div class="section_bar"></div>
 					</div>
