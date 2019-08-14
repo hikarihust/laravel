@@ -2,16 +2,15 @@
     use App\Helpers\Template as Template;
 
     $name 			  = $item['name'];
-    $categoryName	  = $item['categoryName'];
     $linkCategory     = '#';
     $linkArticle	  = '#';
     $created		  = Template::showDatetimeFrontend($item['created']);
     $content  		  = Template::showContent($item['content'], $lenghtContent);
 @endphp
 <div class="post_content">
-    <div class="post_category cat_technology ">
-        <a href="{{ $linkCategory }}">{{ $categoryName }}</a>
-    </div>
+    @if ($showCategory)
+        <div class="post_category cat_technology "><a href="{{ $linkCategory }}">{{ $item['categoryName'] }}</a></div>  
+    @endif
     <div class="post_title"><a
         href="{{ $linkArticle }}">{{ $name }}</a>
     </div>

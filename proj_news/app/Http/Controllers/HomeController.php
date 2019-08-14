@@ -15,14 +15,14 @@ class HomeController extends Controller
     private $params         = array();
     private $model;
     protected $getIndexCategory = [
-        'id',
-        'name',
+        'IdCategory',
+        'nameCategory',
         'display'
     ];
 
     protected $getIndexArticle = [
-        'IdArticle',
-        'nameArticle',
+        'Id',
+        'name',
         'content',
         'thumb',
         'created'

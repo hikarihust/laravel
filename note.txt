@@ -482,3 +482,4 @@ fix pagination:
 
 - get: Lấy ra những bài viết trong category nào đó được xuất hiện ngoài trang chủ
   Keyword: Grouping Collection Elements With groupBy
+- show list: Hiển thị phần dữ liệu theo kiểu list

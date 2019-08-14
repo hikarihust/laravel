@@ -1,7 +1,7 @@
 <div class="world">
   <div class="section_title_container d-flex flex-row align-items-start justify-content-start">
     <div>
-    <div class="section_title">{{$item['name']}}</div>
+    <div class="section_title">{{$item['nameCategory']}}</div>
     </div>
     <div class="section_bar"></div>
   </div>
