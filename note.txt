@@ -445,3 +445,7 @@ fix pagination:
 - selectbox category: Tạo SelectBox Category lên form article
   Khi thực hiện thêm mới bài viết thì cần đưa vào thêm 1 field để chọn category
   Keyword: Laravel get data id name for selectbox -> pluck() 
+- show category:
+  Hiển thị thông tin bài viết đó thuộc về category nào
+  Có thể làm theo kiểu thiết lập mối quan hệ re hoặc sử dụng câu lệnh join
+  Keyword: relationship, join, laravel query builder set alias
