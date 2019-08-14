@@ -477,3 +477,8 @@ fix pagination:
  =============================================== Hiển thị bài viết mới nhất ============================================
  
 - latest: Hiển thị các bài viết mới nhất
+
+ =============================================== Hiển thị bài viết trong category ngoài trang chủ ============================================
+
+- get: Lấy ra những bài viết trong category nào đó được xuất hiện ngoài trang chủ
+  Keyword: Grouping Collection Elements With groupBy

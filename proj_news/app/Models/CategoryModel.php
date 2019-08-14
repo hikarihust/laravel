@@ -10,7 +10,7 @@ use DB;
 class CategoryModel extends AdminModel
 {
     public function __construct() {
-        $this->table = 'category';
+        $this->table = 'category AS c';
         $this->folderUpload = 'category';
         $this->fieldsearchAccepted = ['id', 'name'];
         $this->crudNotAccepted = ['_token'];
@@ -48,10 +48,11 @@ class CategoryModel extends AdminModel
         }
 
         if ($options['task'] === 'news-list-items-is-home') {
-            $query = $this->select('id', 'name', 'display')
-                            ->where('status', '=', 'active')
-                            ->where('is_home', '=', 'yes')
-                            ->orderBy('display', 'desc')
+            $query = $this->select('c.id', 'c.name', 'c.display', 'a.id AS IdArticle', 'a.name AS nameArticle', 'a.content', 'a.thumb', 'a.created')
+                            ->leftJoin('article AS a', 'a.category_id', '=', 'c.id')
+                            ->where('c.status', '=', 'active')
+                            ->where('c.is_home', '=', 'yes')
+                            ->orderBy('c.display', 'desc')
                             ->limit(8);
 
             $result = $query->get()->toArray();
