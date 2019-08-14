@@ -471,3 +471,5 @@ fix pagination:
   partials: Chứa các thành phần chứa mã html dùng chung
     Cấu trúc khi hiển thị bài viết bên trái và bên phải là giống nhau -> Có thể làm gọn code
       -> Tách cấu trúc bài viết ra thành image và content
+- featured right: Hiển thị bài viết feature nằm ở bên tay phải
+  Xóa đi phần tử item đầu tiên(đã được hiển thị ở bên trái)

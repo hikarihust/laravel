@@ -6,7 +6,7 @@
     $linkCategory     = '#';
     $linkArticle	  = '#';
     $created		  = Template::showDatetimeFrontend($item['created']);
-    $content  		  = Template::showContent($item['content'], 500);
+    $content  		  = Template::showContent($item['content'], $lenghtContent);
 @endphp
 <div class="post_content">
     <div class="post_category cat_technology ">
@@ -22,7 +22,9 @@
         </div>
         <div class="post_date"><a href="#">{{ $created }}</a></div>
     </div>
-    <div class="post_text">
-        <p>{!! $content !!}</p>
-    </div>
+    @if ($lenghtContent > 0)
+        <div class="post_text">
+            <p>{!! $content !!}</p>
+        </div>  
+    @endif
 </div>
