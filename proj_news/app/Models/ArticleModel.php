@@ -95,6 +95,10 @@ class ArticleModel extends AdminModel
             self::where('id', $params['id'])->update(['status' => $status]);
         }
 
+        if ($options['task'] === 'change-type') {
+            self::where('id', $params['id'])->update(['type' => $params['currentType']]);
+        }
+
         if ($options['task'] === 'add-item') {
             $params['created_by'] = 'quang';
             $params['created'] = date('Y-m-d');

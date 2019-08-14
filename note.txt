@@ -455,3 +455,6 @@ fix pagination:
 - show featured: 
   Hiển thị kiểu bài viết đó là kiểu gì(Nổi bật hay bình thường)
   Dựa vào giá trị của trường type của bài viết đó để phân biệt bài viết đó có phải là bài viết nổi bật hay không
+- change featured: Xử lý thay đổi giá trị kiểu bài viết
+  ArticleController -> bổ sung type()
+  ArticleModel -> Save đối với trường hợp change-type
