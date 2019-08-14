@@ -462,3 +462,12 @@ fix pagination:
   Lấy ra danh sách các bài viết nổi bật để hiển thị lên trang chủ
   Bài viết nổi bật thì cho hiển thị lên trang chủ 3 bài bao gồm 1 bài viết bên tay trái với hình ảnh lớn, 2 bài bên tay phải với hình
     ảnh nhỏ
+- featured left: Hiển thị bài viết feature nằm ở bên tay trái
+  Lấy phần tử đầu tiên trong danh sách 3 phần tủ nổi bật    
+    \s+ matches any whitespace character (equal to [\r\n\t\f\v ])
+    + Quantifier — Matches between one and unlimited times, as many times as possible, giving back as needed (greedy)
+    $ asserts position at the end of a line
+    S là phủ định của s
+  partials: Chứa các thành phần chứa mã html dùng chung
+    Cấu trúc khi hiển thị bài viết bên trái và bên phải là giống nhau -> Có thể làm gọn code
+      -> Tách cấu trúc bài viết ra thành image và content

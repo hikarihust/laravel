@@ -1324,6 +1324,7 @@ section
 .post_author_name a,
 .post_date a
 {
+	margin-left: 5px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	font-weight: 600;
