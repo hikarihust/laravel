@@ -28,7 +28,7 @@
               $name        = Highlight::show($val->name, $params['search'], 'name');
               $status      = Template::showItemStatus($controllerName, $id, $val->status);
               $isHome      = Template::showItemIsHome($controllerName, $id, $val->is_home);
-              $display     = Template::showItemSelect($controllerName, $id, $val->display);
+              $display     = Template::showItemSelect($controllerName, $id, $val->display, 'display');
               $createdHistory   = Template::showItemHistory($val->created_by, $val->created);
               $modifiedHistory  = Template::showItemHistory($val->modified_by, $val->created);
               $listBtnAction    = Template::showButtonAction($controllerName, $id);

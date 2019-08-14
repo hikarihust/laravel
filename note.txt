@@ -449,3 +449,9 @@ fix pagination:
   Hiển thị thông tin bài viết đó thuộc về category nào
   Có thể làm theo kiểu thiết lập mối quan hệ re hoặc sử dụng câu lệnh join
   Keyword: relationship, join, laravel query builder set alias
+
+ =============================================== Xây dựng chức năng bài viết nổi bật ============================================
+
+- show featured: 
+  Hiển thị kiểu bài viết đó là kiểu gì(Nổi bật hay bình thường)
+  Dựa vào giá trị của trường type của bài viết đó để phân biệt bài viết đó có phải là bài viết nổi bật hay không

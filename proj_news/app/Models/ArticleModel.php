@@ -19,7 +19,7 @@ class ArticleModel extends AdminModel
     public function listItems($params = null, $options = null){
         $result = null;
         if ($options['task'] === 'admin-list-items') {
-            $query = $this->select('a.id', 'a.name', 'a.content', 'a.status', 'a.thumb', 'a.created', 'a.created_by', 'a.modified', 'a.modified_by', 'c.name AS categoryName')
+            $query = $this->select('a.id', 'a.name', 'a.content', 'a.status', 'a.thumb', 'a.type', 'c.name AS categoryName')
                             ->leftJoin('category AS c', "a.category_id", '=', 'c.id');    
             if ($params['filter']['status'] !== 'all') {
                 $query->where('a.status', '=', $params['filter']['status']);

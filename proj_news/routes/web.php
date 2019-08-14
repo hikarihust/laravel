@@ -88,6 +88,7 @@ Route::group(['prefix' => $prefixAdmin], function () {
         Route::post('save', ['as' => $controllerName . '/save','uses' => $controller . 'save']);
         Route::get('delete/{id}', ['as' => $controllerName . '/delete','uses' => $controller . 'delete'])->where('id', '[0-9]+');
         Route::get('change-status-{status}/{id}', ['as' => $controllerName . '/status','uses' => $controller . 'status']);
+        Route::get('change-type-{type}/{id}', ['as' => $controllerName . '/type','uses' => $controller . 'type']);
     });
 });
 

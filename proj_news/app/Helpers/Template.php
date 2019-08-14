@@ -93,9 +93,9 @@ class Template {
         return $xhtml;
     }
 
-    public static function showItemSelect ($controllerName, $id, $displayValue) {
-        $link = route($controllerName .'/display', ['display' => 'value_new', 'id' => $id]);
-        $tmplDisplay = Config::get('zvn.template.display');
+    public static function showItemSelect ($controllerName, $id, $displayValue, $fieldName) {
+        $link = route($controllerName .'/' . $fieldName, [$fieldName => 'value_new', 'id' => $id]);
+        $tmplDisplay = Config::get('zvn.template.' . $fieldName);
         $xhtml = sprintf('<select name="select_change_attr" data-url="%s" class="form-control">', $link);
 
         foreach ($tmplDisplay as $key => $value) {
