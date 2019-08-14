@@ -29,12 +29,14 @@ class HomeController extends Controller
 
         $articleModel  = new ArticleModel();
         $itemsFeature  = $articleModel->listItems(null, ['task' => 'news-list-items-feature']);
+        $itemsLatest   = $articleModel->listItems(null, ['task' => 'news-list-items-latest']);
 
         return view($this->pathViewController . 'index', [
             'params' => $this->params,
             'itemsSlider' => $itemsSlider,
             'itemsCategory' => $itemsCategory,
-            'itemsFeature' => $itemsFeature
+            'itemsFeature' => $itemsFeature,
+            'itemsLatest' => $itemsLatest
         ]);
     }
 }

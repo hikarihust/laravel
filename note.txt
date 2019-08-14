@@ -473,3 +473,7 @@ fix pagination:
       -> Tách cấu trúc bài viết ra thành image và content
 - featured right: Hiển thị bài viết feature nằm ở bên tay phải
   Xóa đi phần tử item đầu tiên(đã được hiển thị ở bên trái)
+
+ =============================================== Hiển thị bài viết mới nhất ============================================
+ 
+- latest: Hiển thị các bài viết mới nhất
