@@ -507,3 +507,10 @@ fix pagination:
 - URL:
   Thao tác gắn link thì phải thực hiện nhiều lần ở nhiều chỗ khác nhau -> tạo ra 1 helper để chuyên thực hiện công việc tạo link
   Sử dụng helper này gắn link cho các category, phần category ở phần latest
+
+ =============================================== Hiển thị chi tiết bài viết ============================================
+- template: Nhúng giao diện xem chi tiết bài viết 
+  Khai báo route
+  Dạng url muốn xây dựng là: bai-viet/suc-khoe-3.html
+    bài viết/tên của bài viết - id
+  Đổ giao diện hiển thị chi tiết bài viết

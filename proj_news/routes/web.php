@@ -104,7 +104,6 @@ Route::group(['prefix' => $prefixNews, 'namespace' => 'News'], function () {
     });
 
     // =========================== CATEGORY ==============================
-    // config để homepage có url là /news68
     $prefix = 'chuyen-muc';
     $controllerName = 'category';
     Route::group(['prefix' => $prefix], function () use ($controllerName) {
@@ -112,5 +111,15 @@ Route::group(['prefix' => $prefixNews, 'namespace' => 'News'], function () {
         Route::get('/{categoryName}-{categoryId}.html', ['as' => $controllerName . '/index', 'uses' => $controller . 'index'])
                 ->where('categoryName', '[0-9a-zA-Z_-]+')
                 ->where('categoryId', '[0-9]+');
+    });
+
+    // =========================== ARTICLE ==============================
+    $prefix = 'bai-viet';
+    $controllerName = 'article';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('/{articleName}-{articleId}.html', ['as' => $controllerName . '/index', 'uses' => $controller . 'index'])
+                ->where('articleName', '[0-9a-zA-Z_-]+')
+                ->where('articleId', '[0-9]+');
     });
 });
