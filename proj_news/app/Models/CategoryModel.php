@@ -100,6 +100,13 @@ class CategoryModel extends AdminModel
                         ->where('id', $params['id'])->first()->toArray();
         }
 
+        if ($options['task'] === 'news-get-item') {
+            $result = self::select('c.id AS IdCategory', 'c.name AS nameCategory', 'c.display', 'a.id', 'a.name', 'a.content', 'a.thumb', 'a.created')
+                        ->leftJoin('article AS a', 'a.category_id', '=', 'c.id')
+                        ->where('c.status', '=', 'active')
+                        ->where('c.id', $params['categoryId'])->get()->toArray();
+        }
+
         return $result;
     }
 

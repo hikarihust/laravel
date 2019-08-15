@@ -6,7 +6,7 @@
     <div class="section_bar"></div>
   </div>
   <div class="row world_row">
-    <div class="col-lg-11">
+    <div class="col-lg-12">
       <div class="row">
         @foreach ($item['articles'] as $article)
           <div class="col-lg-6">

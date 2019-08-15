@@ -498,3 +498,6 @@ fix pagination:
     // laravel-5-framework
   Khi thực hiện click vào category thì active category đó lên, để active được thì cần phải lấy được category nào đang được chọn hay có nghĩa là
     cần phải lấy được id -> lấy được từ trên URL
+- show articles: Lấy các bài viết trong category nào đó để đổ ra ngoài giao diện
+  Category đó thuộc kiểu list thì các bài viết của nó cũng phải được hiển thị theo kiểu list, kiểu lưới thì các bài viết của nó cũng phải được
+    hiển thị theo kiểu lưới
