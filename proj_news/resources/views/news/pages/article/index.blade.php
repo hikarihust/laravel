@@ -2,7 +2,7 @@
 @section('content')
 <!-- Content -->
 <div class="section-category">
-	{{-- @include('news.block.breadcrumb') --}}
+	@include('news.block.breadcrumb_article', ['item' => $itemArticle])
 	<div class="content_container container_category">
 		<div class="featured_title">
 			<div class="container">

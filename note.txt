@@ -518,3 +518,4 @@ fix pagination:
   Bài viết nổi bật
   Bài viết mới nhất
   Các bài viết nằm trong 1 category nào đó
+- breadcrumb: Thực hiển thị breadcrumb của bài viết
