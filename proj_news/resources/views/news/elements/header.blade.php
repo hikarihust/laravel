@@ -1,5 +1,6 @@
 @php
 	use App\Models\CategoryModel as CategoryModel;
+	use Illuminate\Support\Str;
 	$categoryModel = new CategoryModel();
 	$itemsCategory = $categoryModel->listItems(null, ['task' => 'news-list-items']);
 
@@ -9,10 +10,14 @@
 	if (isset($itemsCategory) && (count($itemsCategory) > 0)) {
 		$xhtmlMenu .= '<nav class="main_nav"><ul class="main_nav_list d-flex flex-row align-items-center justify-content-start">';
 		$xhtmlMenuMobile .= '<nav class="menu_nav"><ul class="menu_mm">';
-			foreach ($itemsCategory as $item) {
-				$xhtmlMenu .= sprintf('<li><a href="#">%s</a></li>', $item['name']);
-				$xhtmlMenuMobile .= sprintf('<li class="menu_mm"><a href="#">%s</a></li>', $item['name']);
-			}
+		$categoryIdCurrent = Route::input('categoryId');
+		foreach ($itemsCategory as $item) {
+			$link = route('category/index', ['categoryName' => Str::slug($item['name']), 'categoryId' => $item['id']]);
+			$classActive = (intval($categoryIdCurrent) === $item['id']) ? 'class="active"' : '';
+
+			$xhtmlMenu .= sprintf('<li %s><a href="%s">%s</a></li>', $classActive, $link , $item['name']);
+			$xhtmlMenuMobile .= sprintf('<li class="menu_mm"><a href="%s">%s</a></li>',$link , $item['name']);
+		}
 		$xhtmlMenu .= '</ul></nav>';
 		$xhtmlMenuMobile .= '</ul></nav>';
 	}
@@ -26,8 +31,8 @@
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justfy-content-start">
 						<div class="logo_container">
-							<a href="#">
-								<div class="logo"><span>ZEND</span>VN</div>
+							<a href="{{ route('home') }}">
+								<div class="logo"><span>WEB</span>DEMO</div>
 							</a>
 						</div>
 						<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">

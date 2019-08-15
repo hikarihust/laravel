@@ -492,3 +492,9 @@ fix pagination:
   Dạng url muốn xây dựng là: chuyen-muc/suc-khoe-3.html
     chuyên mục/tên chuyên mục - id
   folder news: Chứa các Controller của News
+- link category: Gắn link cho các category
+  The Str::slug method generates a URL friendly "slug" from the given string:
+    $slug = Str::slug('Laravel 5 Framework', '-');
+    // laravel-5-framework
+  Khi thực hiện click vào category thì active category đó lên, để active được thì cần phải lấy được category nào đang được chọn hay có nghĩa là
+    cần phải lấy được id -> lấy được từ trên URL
