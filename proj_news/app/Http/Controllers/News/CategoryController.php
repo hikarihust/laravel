@@ -15,13 +15,13 @@ class CategoryController extends Controller
     private $params         = array();
     private $model;
     protected $getIndexCategory = [
-        'IdCategory',
+        'idCategory',
         'nameCategory',
         'display'
     ];
 
     protected $getIndexArticle = [
-        'Id',
+        'id',
         'name',
         'content',
         'thumb',
@@ -54,7 +54,7 @@ class CategoryController extends Controller
         $itemCategory = $categoryModel->getItem($params, ['task' => 'news-get-item']);
 
         $itemCategory = new Collection($itemCategory);
-        $itemCategory = $itemCategory->groupBy('IdCategory')->toArray();
+        $itemCategory = $itemCategory->groupBy('idCategory')->toArray();
         $tmpCategory   = array();
         $tmpArticle    = array();
         $tmpItem       = array();

@@ -11,7 +11,7 @@
         $thumb			  = asset('images/article/' . $item['thumb']);
         $categoryName = $item['categoryName'];
         $linkCategory = URL::linkCategory($item['category_id'], $item['categoryName']);
-        $linkArticle  = '#';
+        $linkArticle = URL::linkArticle($item['id'], $item['name']);
         $created		  = Template::showDatetimeFrontend($item['created']);
       @endphp
       <!-- Latest Post -->

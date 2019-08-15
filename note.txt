@@ -514,3 +514,7 @@ fix pagination:
   Dạng url muốn xây dựng là: bai-viet/suc-khoe-3.html
     bài viết/tên của bài viết - id
   Đổ giao diện hiển thị chi tiết bài viết
+- link article: Gắn link để người dùng có thể xem chi tiết 1 bài viết nào đó
+  Bài viết nổi bật
+  Bài viết mới nhất
+  Các bài viết nằm trong 1 category nào đó

@@ -6,7 +6,8 @@
     if ($showCategory) {
         $linkCategory     = URL::linkCategory($item['category_id'], $item['categoryName']);
     }
-    $linkArticle	  = '#';
+    
+    $linkArticle      = URL::linkArticle($item['id'], $item['name']);
     $created		  = Template::showDatetimeFrontend($item['created']);
     $content  		  = Template::showContent($item['content'], $lenghtContent);
 @endphp

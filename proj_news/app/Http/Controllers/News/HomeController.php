@@ -15,13 +15,13 @@ class HomeController extends Controller
     private $params         = array();
     private $model;
     protected $getIndexCategory = [
-        'IdCategory',
+        'idCategory',
         'nameCategory',
         'display'
     ];
 
     protected $getIndexArticle = [
-        'Id',
+        'id',
         'name',
         'content',
         'thumb',
@@ -56,7 +56,7 @@ class HomeController extends Controller
         $categoryModel = new CategoryModel();
         $itemsCategory = $categoryModel->listItems(null, ['task' => 'news-list-items-is-home']);
         $itemsCategory = new Collection($itemsCategory);
-        $itemsCategory = $itemsCategory->groupBy('IdCategory')->toArray();
+        $itemsCategory = $itemsCategory->groupBy('idCategory')->toArray();
         $tmpCategory   = array();
         $tmpArticle    = array();
         $tmpItem       = array();
