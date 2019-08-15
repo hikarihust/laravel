@@ -504,3 +504,6 @@ fix pagination:
 - breadcrumb:
   breadcrumb
   Khi vào trang category bất kỳ mà không có kết quả bài viết nào thì redirect về trang home
+- URL:
+  Thao tác gắn link thì phải thực hiện nhiều lần ở nhiều chỗ khác nhau -> tạo ra 1 helper để chuyên thực hiện công việc tạo link
+  Sử dụng helper này gắn link cho các category, phần category ở phần latest

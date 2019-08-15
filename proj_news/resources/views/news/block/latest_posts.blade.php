@@ -1,17 +1,18 @@
 @php
   use App\Helpers\Template as Template;
+  use App\Helpers\URL;
 @endphp
 <div class="sidebar_latest">
   <div class="sidebar_title">Bài viết gần đây</div>
   <div class="latest_posts">
     @foreach ($items as $item)
       @php
-          $name         = $item['name'];
-          $thumb			  = asset('images/article/' . $item['thumb']);
-          $categoryName = $item['categoryName'];
-          $linkCategory = '#';
-          $linkArticle  = '#';
-          $created		  = Template::showDatetimeFrontend($item['created']);
+        $name         = $item['name'];
+        $thumb			  = asset('images/article/' . $item['thumb']);
+        $categoryName = $item['categoryName'];
+        $linkCategory = URL::linkCategory($item['category_id'], $item['categoryName']);
+        $linkArticle  = '#';
+        $created		  = Template::showDatetimeFrontend($item['created']);
       @endphp
       <!-- Latest Post -->
       <div class="latest_post d-flex flex-row align-items-start justify-content-start">

@@ -52,6 +52,7 @@ class ArticleModel extends AdminModel
             $query = $this->select('a.id', 'a.name', 'a.content', 'a.created', 'a.category_id', 'c.name AS categoryName', 'a.thumb')
                             ->leftJoin('category AS c', 'a.category_id', '=', 'c.id')
                             ->where('a.status', '=', 'active')
+                            ->where('c.status', '=', 'active')
                             ->where('a.type', '=', 'feature')
                             ->orderBy('a.id', 'desc')
                             ->limit(3);

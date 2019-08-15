@@ -9,7 +9,7 @@
 				<div class="row">
 					<!-- Main Content -->
 					<div class="col-lg-9">
-							@include('news.pages.category.child-index.category', ['item' => $itemCategory[0]])
+						@include('news.pages.category.child-index.category', ['item' => $itemCategory[0]])
 					</div>
 					<!-- Sidebar -->
 					<div class="col-lg-3">
