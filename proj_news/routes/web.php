@@ -93,13 +93,24 @@ Route::group(['prefix' => $prefixAdmin], function () {
 });
 
 // News
-Route::group(['prefix' => $prefixNews], function () {
+Route::group(['prefix' => $prefixNews, 'namespace' => 'News'], function () {
     // =========================== HOMEPAGE ==============================
-    // config để homepage có url là /news
+    // config để homepage có url là /news68
     $prefix = '';
     $controllerName = 'home';
     Route::group(['prefix' => $prefix], function () use ($controllerName) {
         $controller = ucfirst($controllerName) . 'Controller@'; 
         Route::get('', ['as' => $controllerName, 'uses' => $controller . 'index']);
+    });
+
+    // =========================== CATEGORY ==============================
+    // config để homepage có url là /news68
+    $prefix = 'chuyen-muc';
+    $controllerName = 'category';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('/{categoryName}-{categoryId}.html', ['as' => $controllerName . '/index', 'uses' => $controller . 'index'])
+                ->where('categoryName', '[0-9a-zA-Z_-]+')
+                ->where('categoryId', '[0-9]+');
     });
 });

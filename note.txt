@@ -484,3 +484,11 @@ fix pagination:
   Keyword: Grouping Collection Elements With groupBy
 - show list: Hiển thị phần dữ liệu theo kiểu list
 - show grid: Hiển thị phần dữ liệu theo kiểu lưới
+
+ =============================================== Hiển thị bài viết trong category ============================================
+  Khi click vào 1 category nào đó thì nó sẽ hiển thị các bài viết trong category đó
+- template:
+  Gắn link cho các category đó
+  Dạng url muốn xây dựng là: chuyen-muc/suc-khoe-3.html
+    chuyên mục/tên chuyên mục - id
+  folder news: Chứa các Controller của News
