@@ -519,3 +519,7 @@ fix pagination:
   Bài viết mới nhất
   Các bài viết nằm trong 1 category nào đó
 - breadcrumb: Thực hiển thị breadcrumb của bài viết
+- show article: Hiển thị nội dung chi tiết của 1 bài viết
+  Cấu tạo thì cũng có 2 phần đó là image và content
+  image: Có thêm class="img-fluid w-100"
+  content: Hiển thị hết nội dung của bài viết, không thực hiện cắt chuỗi

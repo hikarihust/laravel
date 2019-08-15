@@ -9,7 +9,12 @@
     
     $linkArticle      = URL::linkArticle($item['id'], $item['name']);
     $created		  = Template::showDatetimeFrontend($item['created']);
-    $content  		  = Template::showContent($item['content'], $lenghtContent);
+    
+    if ($lenghtContent === 'full') {
+        $content = $item['content'];
+    } else {
+        $content  = Template::showContent($item['content'], $lenghtContent);
+    }
 @endphp
 <div class="post_content">
     @if ($showCategory)
@@ -25,7 +30,7 @@
         </div>
         <div class="post_date"><a href="#">{{ $created }}</a></div>
     </div>
-    @if ($lenghtContent > 0)
+    @if ($lenghtContent > 0 || $lenghtContent === 'full')
         <div class="post_text">
             <p>{!! $content !!}</p>
         </div>  
