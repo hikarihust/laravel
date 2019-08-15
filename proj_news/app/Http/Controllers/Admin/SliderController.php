@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\CategoryModel as MainModel;
-use App\Http\Requests\CategoryRequest as MainRequest;
+use App\Models\SliderModel as MainModel;
+use App\Http\Requests\SliderRequest as MainRequest;
 
-class CategoryController extends Controller
+class SliderController extends Controller
 {
-    private $pathViewController = 'admin.pages.category.';
-    private $controllerName = 'category';
+    private $pathViewController = 'admin.pages.slider.';
+    private $controllerName = 'slider';
     private $params         = array();
     private $model;
 
     public function __construct()
     {
         $this->model = new MainModel();
-        $this->params["pagination"]["totalItemsPerPage"] = 5;
+        $this->params["pagination"]["totalItemsPerPage"] = 1;
         view()->share('controllerName', $this->controllerName);
     }
 
@@ -72,23 +72,6 @@ class CategoryController extends Controller
         $params['id'] = $request->id;
         $this->model->saveItem($params, ['task' => 'change-status']);
         return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật trạng thái thành công!');
-    }
-
-    public function isHome(Request $request)
-    {   
-        $params['currentIsHome'] = $request->isHome;
-        $params['id'] = $request->id;
-        $this->model->saveItem($params, ['task' => 'change-is-home']);
-        return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật trạng thái hiển thị trang chủ thành công!');
-    }
-
-    public function display(Request $request)
-    {   
-        $params['currentDisplay'] = $request->display;
-        $params['id'] = $request->id;
-        $this->model->saveItem($params, ['task' => 'change-display']);
-        
-        return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật kiểu hiện thị thành công!');
     }
 
     public function delete(Request $request)

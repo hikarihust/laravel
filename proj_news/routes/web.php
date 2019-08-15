@@ -42,7 +42,7 @@ $prefixNews = Config::get('zvn.url.prefix_news', 'news68');
 //     });
 // });
 // Admin
-Route::group(['prefix' => $prefixAdmin], function () {
+Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin'], function () {
     // =========================== DASHBOARD ==============================
     $prefix = 'dashboard';
     $controllerName = 'dashboard';
