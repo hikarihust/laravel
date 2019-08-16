@@ -528,3 +528,6 @@ fix pagination:
 - get related:
   Lấy ra danh sách các bài viết nằm trong cùng category với bài viết hiện tại và loại trừ đi bài viết hiện tại
   Hiển thị theo kiểu của category: danh sách hay lưới
+
+- show related:
+  Khi không có bài viết nào thì không hiển thị phần bài viết liên quan
