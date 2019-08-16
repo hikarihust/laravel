@@ -41,6 +41,9 @@ $prefixNews = Config::get('zvn.url.prefix_news', 'news68');
 //         return "/admin/category";
 //     });
 // });
+
+### anonymous
+Route::get('/pagenotfound', 'HomeController@pagenotfound')->name('notfound');
 // Admin
 Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin'], function () {
     // =========================== DASHBOARD ==============================
