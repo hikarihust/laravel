@@ -523,3 +523,8 @@ fix pagination:
   Cấu tạo thì cũng có 2 phần đó là image và content
   image: Có thêm class="img-fluid w-100"
   content: Hiển thị hết nội dung của bài viết, không thực hiện cắt chuỗi
+
+ =============================================== Hiển thị danh sách bài viết cùng category ============================================
+- get related:
+  Lấy ra danh sách các bài viết nằm trong cùng category với bài viết hiện tại và loại trừ đi bài viết hiện tại
+  Hiển thị theo kiểu của category: danh sách hay lưới

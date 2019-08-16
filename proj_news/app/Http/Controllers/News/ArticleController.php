@@ -28,6 +28,8 @@ class ArticleController extends Controller
         if(empty($itemArticle)) return redirect()->route('home');
 
         $itemsLatest   = $articleModel->listItems(null, ['task' => 'news-list-items-latest']);
+        $params['category_id'] = $itemArticle['category_id'];
+        $itemArticle['related_articles'] = $articleModel->listItems($params, ['task' => 'news-list-items-related-in-category']);
         
         return view($this->pathViewController . 'index', [
             'params' => $this->params,
