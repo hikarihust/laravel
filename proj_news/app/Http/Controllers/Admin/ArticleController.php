@@ -18,7 +18,7 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->model = new MainModel();
-        $this->params["pagination"]["totalItemsPerPage"] = 5;
+        $this->params["pagination"]["totalItemsPerPage"] = 2;
         view()->share('controllerName', $this->controllerName);
     }
 
