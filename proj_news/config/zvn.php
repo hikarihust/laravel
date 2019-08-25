@@ -38,6 +38,10 @@ return [
             'feature' => ['name' => 'Nổi bật'],
             'normal' => ['name' => 'Bình thường'],
         ],
+        'level' => [
+            'admin' => ['name' => 'Quản trị hệ thống'],
+            'member' => ['name' => 'User'],
+        ],
         'search' => [
             'all' => ['name' => 'Search by All'],
             'id' => ['name' => 'Search by ID'],
@@ -60,13 +64,15 @@ return [
             'default' => ['all', 'id', 'fullname'],
             'slider' => ['all', 'id', 'name', 'description', 'link'],
             'category' => ['all', 'id', 'name'],
-            'article' => ['all', 'name', 'content']
+            'article' => ['all', 'name', 'content'],
+            'user' => ['all', 'username', 'email', 'fullname']
         ],
         'button' => [
             'default' => ['edit', 'delete'],
             'slider'  =>  ['edit', 'delete'],
             'category'  =>  ['edit', 'delete'],
-            'article'  =>  ['edit', 'delete']
+            'article'  =>  ['edit', 'delete'],
+            'user'  =>  ['edit']
         ]
     ]
 ];

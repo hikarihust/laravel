@@ -532,3 +532,14 @@ fix pagination:
 - show related:
   Khi không có bài viết nào thì không hiển thị phần bài viết liên quan
 - Error 404
+
+ ================================================================================================================
+                                              Giới hạn vùng truy cập
+ ================================================================================================================
+Xây dụng thêm chức năng login, khi người dùng login, kiểm tra xem họ có quyền truy cập vào vùng admin hay không, nếu
+  người đó có quyền truy cập vào admin thì cho truy cập, còn không thì cho họ truy cập vào frontend
+Dựa vào giá trị của trường level của bảng users, nếu user đó có level là admin thì cho phép truy cập vào vùng quản trị,
+  còn không thì không cho phép truy cập vào vùng quản trị
+ ============================================ Quản lý người dùng ============================================
+
+- list: Trang hiển thị danh sách user
