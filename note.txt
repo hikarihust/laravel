@@ -543,3 +543,11 @@ Dựa vào giá trị của trường level của bảng users, nếu user đó 
  ============================================ Quản lý người dùng ============================================
 
 - list: Trang hiển thị danh sách user
+- form add: 
+  Thêm mới user
+  Bổ sung thêm level cho user: user đó là là người dùng bình thường hay là admin
+  Khi thêm user thì tiến hành nhập password cho user đó
+    Confirm password(Validate)
+    Keyword: validate password
+    Khi lưu vào database thì cần phải mã hóa mật 
+    Ví dụ cách mã hóa mật khẩu an toàn hơn: username_password_ngaytao

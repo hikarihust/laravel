@@ -24,21 +24,24 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        $condAvatar = 'bail|required|image|max:500';
         $condUserName = "bail|required|between:5,100|unique:$this->table,username";
         $condEmail = "bail|required|email|unique:$this->table,email";
+        $condAvatar = 'bail|required|image|max:500';
+        $condPass = 'bail|required|between:5,100|confirmed';
 
         if (! empty($this->id)) {
-            $condAvatar = 'bail|image|max:500';
             $condUserName .= ",$this->id";
             $condEmail .= ",$this->id";
+            $condAvatar = 'bail|image|max:500';
         }
         return [
             'username' => $condUserName,
             'email' => $condEmail,
             'fullname' => 'bail|required|min:5',
-            'status' => 'bail|in:admin,member',
-            'thumb' => $condAvatar
+            'status' => 'bail|in:active,inactive',
+            'level' => 'bail|in:admin,member',
+            'password' => $condPass,
+            'avatar' => $condAvatar
         ];
     }
 

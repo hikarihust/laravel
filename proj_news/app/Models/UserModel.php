@@ -13,7 +13,7 @@ class UserModel extends AdminModel
         $this->table = 'user';
         $this->folderUpload = 'user';
         $this->fieldsearchAccepted = ['id', 'username', 'email', 'fullname'];
-        $this->crudNotAccepted = ['_token','avatar_current'];
+        $this->crudNotAccepted = ['_token','avatar_current', 'password_confirmation'];
     }
 
     public function listItems($params = null, $options = null){
@@ -69,7 +69,7 @@ class UserModel extends AdminModel
     public function getItem($params = null, $options = null) {
         $result = null;
         if ($options['task'] === 'get-item') {
-            $result = self::select('id', 'username', 'email', 'status', 'fullname', 'avatar')
+            $result = self::select('id', 'username', 'email', 'status', 'fullname', 'avatar', 'level')
                         ->where('id', $params['id'])->first()->toArray();
         }
 
@@ -90,6 +90,7 @@ class UserModel extends AdminModel
             $params['created_by'] = 'quang';
             $params['created'] = date('Y-m-d');
             $params['avatar'] = $this->_uploadThumb($params['avatar']);
+            $params['password'] = md5($params['password']);
             self::insert($this->_prepareParams($params));
         }
 

@@ -40,7 +40,7 @@ return [
         ],
         'level' => [
             'admin' => ['name' => 'Quản trị hệ thống'],
-            'member' => ['name' => 'User'],
+            'member' => ['name' => 'Người dùng bình thường'],
         ],
         'search' => [
             'all' => ['name' => 'Search by All'],
