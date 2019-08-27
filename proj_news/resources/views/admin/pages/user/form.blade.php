@@ -5,7 +5,10 @@
 @include('admin.templates.error')
 
 @if ($item['id'])
-  @include('admin.pages.user.form_info')  
+<div class="row">
+  @include('admin.pages.user.form_info')
+  @include('admin.pages.user.form_change_password')
+</div>
 @else
   @include('admin.pages.user.form_add')
 @endif

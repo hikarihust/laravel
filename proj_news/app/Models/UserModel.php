@@ -108,6 +108,11 @@ class UserModel extends AdminModel
             $level = $params['currentLevel'];
             self::where('id', $params['id'])->update(['level' => $level]);
         }
+
+        if ($options['task'] === 'change-password') {
+            $password = md5($params['password']);
+            self::where('id', $params['id'])->update(['password' => $password]);
+        }
     }
 
     public function deleteItem($params = null, $options = null) {

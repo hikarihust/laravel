@@ -72,6 +72,15 @@ class UserController extends Controller
         return redirect()->route($this->controllerName)->with('zvn_notify', 'Cập nhật trạng thái thành công!');
     }
 
+    public function changePassword(MainRequest $request)
+    {
+        if ($request->method() === 'POST') {
+            $params = $request->all();
+            $this->model->saveItem($params, ['task' => 'change-password']);
+            return redirect()->route($this->controllerName)->with('zvn_notify', 'Thay đổi mật khẩu thành công!');
+        }
+    }
+
     public function level(Request $request)
     {   
         $params['currentLevel'] = $request->level;
