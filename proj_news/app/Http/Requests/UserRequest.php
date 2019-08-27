@@ -56,6 +56,7 @@ class UserRequest extends FormRequest
                 $condPass     = 'bail|required|between:5,100|confirmed';
                 break;
             case 'change-level':
+                $condLevel = 'bail|in:admin,member';
                 break;
             default:
                 break;

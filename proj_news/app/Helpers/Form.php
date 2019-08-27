@@ -53,6 +53,15 @@ class Form {
                         </div>
                     </div>', $element['element']);
                 break;
+            case 'btn-submit-edit':
+                $xhtml .= sprintf(
+                    '<div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                        %s
+                        </div>
+                    </div>', $element['element']);
+                break;
         }
 
         return $xhtml;

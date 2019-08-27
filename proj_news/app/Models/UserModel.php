@@ -109,6 +109,11 @@ class UserModel extends AdminModel
             self::where('id', $params['id'])->update(['level' => $level]);
         }
 
+        if ($options['task'] === 'change-level-post') {
+            $level = $params['level'];
+            self::where('id', $params['id'])->update(['level' => $level]);
+        }
+
         if ($options['task'] === 'change-password') {
             $password = md5($params['password']);
             self::where('id', $params['id'])->update(['password' => $password]);

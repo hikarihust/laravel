@@ -560,3 +560,4 @@ Dựa vào giá trị của trường level của bảng users, nếu user đó 
   Do đó thì tách tập tin form đã tạo thành các tập tin form khác nhau để sử lý các loại công việc khác nhau
   Trong trường hợp chỉ cập nhật thông tin cơ bản của 1 user nào đó(username, email, status...) thì không cần validate password
 - form change password: Thay đổi password cho người dùng
+- form change level: Thay đổi level của 1 user nào đó
