@@ -558,3 +558,4 @@ Dựa vào giá trị của trường level của bảng users, nếu user đó 
     edit mật khẩu của user
     Cấp quyền cho user(thay đổi level)
   Do đó thì tách tập tin form đã tạo thành các tập tin form khác nhau để sử lý các loại công việc khác nhau
+  Trong trường hợp chỉ cập nhật thông tin cơ bản của 1 user nào đó(username, email, status...) thì không cần validate password

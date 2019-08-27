@@ -9,6 +9,7 @@
                   'inactive' => config('zvn.template.status.inactive.name')];
   $inputHiddenID = Form::hidden('id', $item['id']);
   $inputHiddenAvatar = Form::hidden('avatar_current', $item['avatar']);
+  $inputHiddenTask = Form::hidden('task', 'edit-info');
   $elements = [
     [
       'label' => Form::label('username', 'UserName', $formLabelAttr),
@@ -33,7 +34,7 @@
       'type' => 'avatar'
     ],
     [
-      'element' => $inputHiddenID . $inputHiddenAvatar . Form::submit('Save', ['class' => 'btn btn-success']),
+      'element' => $inputHiddenID . $inputHiddenAvatar . $inputHiddenTask . Form::submit('Save', ['class' => 'btn btn-success']),
       'type' => 'btn-submit' 
     ]
   ];
@@ -41,7 +42,7 @@
 @endphp
 <!--box-lists-->
 <div class="row">
-	<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="col-md-6 col-sm-12 col-xs-12">
 		<div class="x_panel">
       @include('admin.templates.x_title', ['title' => 'Form Edit Info'])
       <div class="x_content">

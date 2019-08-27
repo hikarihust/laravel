@@ -4,7 +4,6 @@
 @include('admin.templates.page_header', ['pageIndex' => false])
 @include('admin.templates.error')
 
-
 @if ($item['id'])
   @include('admin.pages.user.form_info')  
 @else

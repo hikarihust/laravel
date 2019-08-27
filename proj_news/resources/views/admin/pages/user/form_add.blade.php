@@ -12,6 +12,7 @@
                   'member' => config('zvn.template.level.member.name')];
   $inputHiddenID = Form::hidden('id', $item['id']);
   $inputHiddenAvatar = Form::hidden('avatar_current', $item['avatar']);
+  $inputHiddenTask = Form::hidden('task', 'add');
   $elements = [
     [
       'label' => Form::label('username', 'UserName', $formLabelAttr),
@@ -48,7 +49,7 @@
       'type' => 'avatar'
     ],
     [
-      'element' => $inputHiddenID . $inputHiddenAvatar . Form::submit('Save', ['class' => 'btn btn-success']),
+      'element' => $inputHiddenID . $inputHiddenAvatar . $inputHiddenTask . Form::submit('Save', ['class' => 'btn btn-success']),
       'type' => 'btn-submit' 
     ]
   ];
