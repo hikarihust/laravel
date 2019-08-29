@@ -140,4 +140,16 @@ Route::group(['prefix' => $prefixNews, 'namespace' => 'News'], function () {
                 ->where('articleName', '[0-9a-zA-Z_-]+')
                 ->where('articleId', '[0-9]+');
     });
+
+    // =========================== LOGIN ==============================
+    $prefix = '';
+    $controllerName = 'auth';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('/login', ['as' => $controllerName . '/login', 'uses' => $controller . 'login']);
+        Route::post('/postLogin', ['as' => $controllerName . '/postLogin', 'uses' => $controller . 'postLogin']);
+
+        // =========================== LOGOUT ==============================
+        Route::get('/logout', ['as' => $controllerName . '/logout', 'uses' => $controller . 'logout']);
+    });
 });

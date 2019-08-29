@@ -561,3 +561,18 @@ Dựa vào giá trị của trường level của bảng users, nếu user đó 
   Trong trường hợp chỉ cập nhật thông tin cơ bản của 1 user nào đó(username, email, status...) thì không cần validate password
 - form change password: Thay đổi password cho người dùng
 - form change level: Thay đổi level của 1 user nào đó
+ ============================================ Giới hạn vùng truy cập ============================================
+Thực hiện chức năng đăng nhập:
+  Phần front thì ai cũng có thể xem được, phần này không cần login
+  Vùng user: Là phần cần phải login, user này có level là member
+  Vùng quản trị: Cần phải login và level phải là login
+  Laravel Document: Security -> Authentication
+  Keyword: Laravel login, laravel Authentication
+  Ở phần này sẽ tiến hành làm theo cách thông thường đó là khi đăng nhập sẽ tiến hành kiểm tra tài khoản đó có tồn tại
+    trong database không, nếu có thì tiến hành lưu thông tin tài khoản vào Session, rồi dựa vào đó biết được quyền của Người
+    dùng cũng như là kiểm tra người dùng này đã đăng nhập hay chưa
+- login template
+  'autofocus' => true: Ban đầu vào trang login thì mặc định là focus lên ô input email
+  Tích hợp giao diện login
+  Trên trang login khi nhấn vào nút Login để submit thì gửi dữ liệu trong form đăng nhập qua postLogin, ở đây có nhiệm vụ kiểm tra thông tin
+    có hợp lệ hay không
