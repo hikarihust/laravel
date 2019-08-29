@@ -4,6 +4,8 @@
     <div class="card fat">
         <div class="card-body">
             <h4 class="card-title">Đăng nhập</h4>
+            @include ('news.templates.error')
+            @include ('news.templates.alert')
                 {!! Form::open([
                     'method'  => 'POST',
                     'url'     => route("$controllerName/postLogin"),
