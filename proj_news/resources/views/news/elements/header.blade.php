@@ -20,7 +20,11 @@
 			$xhtmlMenuMobile .= sprintf('<li class="menu_mm"><a href="%s">%s</a></li>',$link , $item['name']);
 		}
 
-		$xhtmlMenuUser = sprintf('<li><a href="%s">%s</a></li>', route('auth/login') , 'Đăng nhập');
+		if (session('userInfo')) {
+			$xhtmlMenuUser = sprintf('<li><a href="%s">%s</a></li>', route('auth/logout') , 'Logout');
+		} else {
+			$xhtmlMenuUser = sprintf('<li><a href="%s">%s</a></li>', route('auth/login') , 'Login');
+		}
 
 		$xhtmlMenu .= $xhtmlMenuUser . '</ul></nav>';
 		$xhtmlMenuMobile .= $xhtmlMenuUser . '</ul></nav>';

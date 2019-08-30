@@ -584,3 +584,9 @@ Thực hiện chức năng đăng nhập:
   Kiểm tra 1 người nào đó đăng nhập thành công hay không
   Dựa vào thông tin từ form đăng nhập tìm kiếm trong database xem có giá trị nào trùng khớp hay không, nếu có thì chứng tỏ đó là thông tin của
     người dùng, họ đã đăng nhập thành công. Nếu không có kết quả nào trong database thì chứng tỏ người dùng đã đăng nhập sai
+  Khi thông tin user người dùng đã đúng nhưng mà giá trị của status là inactive thì có thể hiển thị lên câu thông báo là tài khoản bị khóa...
+- logout:
+  Khi user đăng nhập thành công thì lưu thông tin của user đó vào trong Session và redirect về trang chủ
+  session('userInfo'): Lấy giá trị session trên blade
+  Nếu đã đăng nhập thành công thì trên menu cho hiển thị là Logout, Nếu chưa đăng nhập thì hiển thị nút đăng nhập
+  Khi Logout thì xóa thông tin session lưu thông tin người dùng, sau khi xóa session thì redirect về trang chủ

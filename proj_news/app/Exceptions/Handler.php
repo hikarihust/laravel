@@ -52,6 +52,9 @@ class Handler extends ExceptionHandler
                 case 404:
                     return redirect()->route('notfound');
                     break;
+                case 405:
+                    return redirect()->route('notfound');
+                    break;
                 // internal error
                 case 500:
                     return redirect()->route('notfound');
