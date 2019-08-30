@@ -590,3 +590,10 @@ Thực hiện chức năng đăng nhập:
   session('userInfo'): Lấy giá trị session trên blade
   Nếu đã đăng nhập thành công thì trên menu cho hiển thị là Logout, Nếu chưa đăng nhập thì hiển thị nút đăng nhập
   Khi Logout thì xóa thông tin session lưu thông tin người dùng, sau khi xóa session thì redirect về trang chủ
+- check login:
+  Khi đã login rồi mà cố tình quay lại trang login bằng cách nhập trên URL thì sẽ chuyển về trang home, nhưng ngoài ra cũng tiến hành check 
+    ở các màn hình mà yêu cầu login xong mới vào được -> sử dụng middleware để kiểm tra login
+  Keyword: Laravel middleware
+    Khi vào 1 link bất kỳ nếu mà middleware kiểm tra thành công thì sẽ tiếp tục truy cập vào link đó, còn không thì sẽ redirect về trang home
+  Khi sử dụng 1 middleware thì cần đăng ký trong app/Http/Kernel.php
+  Khi có middleware và đăng ký xong thì cần phải cho biết middleware này được sử dụng cho những màn hình nào -> khai báo trong route
