@@ -28,6 +28,14 @@ class AuthController extends Controller
     {   
         if($request->method() === 'POST') {
             $params = $request->all();
+
+            $userModel = new UserModel();
+            $userInfo = $userModel->getItem($params, ['task' => 'auth-login']);
+
+            if (!$userInfo) {
+                return redirect()->route($this->controllerName . '/login')->with('news_notify', 'Tài khoản hoặc mật
+                    khẩu không chính xác!');
+            }
         }
     }
 

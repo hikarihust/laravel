@@ -77,6 +77,15 @@ class UserModel extends AdminModel
             $result = self::select('id', 'avatar')->where('id', $params['id'])->first()->toArray();
         }
 
+        if ($options['task'] === 'auth-login') {
+            $result = self::select('id', 'username', 'fullname', 'email', 'level', 'avatar')
+                      ->where('status', 'active')
+                      ->where('email', $params['email'])
+                      ->where('password', md5($params['password']))
+                      ->first();
+            if($result) $result = $result->toArray();
+        }
+
         return $result;
     }
 

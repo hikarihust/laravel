@@ -580,3 +580,7 @@ Thực hiện chức năng đăng nhập:
   Kiểm tra thông tin người dùng nhập từ form login gửi qua có họp lệ hay không
   Để phát triển hệ thống lên thì có thể dàng buộc các giá trị trên form phức tạp hơn
     password: Phải có 1 ký tự thường, phải có ký tự in hoa, số, ký tự đặc biệt...
+- login:
+  Kiểm tra 1 người nào đó đăng nhập thành công hay không
+  Dựa vào thông tin từ form đăng nhập tìm kiếm trong database xem có giá trị nào trùng khớp hay không, nếu có thì chứng tỏ đó là thông tin của
+    người dùng, họ đã đăng nhập thành công. Nếu không có kết quả nào trong database thì chứng tỏ người dùng đã đăng nhập sai
