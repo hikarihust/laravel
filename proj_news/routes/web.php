@@ -45,7 +45,7 @@ $prefixNews = Config::get('zvn.url.prefix_news', 'news68');
 ### anonymous
 Route::get('/pagenotfound', 'HomeController@pagenotfound')->name('notfound');
 // Admin
-Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin', 'middleware' => ['permission.admin']], function () {
     // =========================== DASHBOARD ==============================
     $prefix = 'dashboard';
     $controllerName = 'dashboard';
@@ -139,6 +139,14 @@ Route::group(['prefix' => $prefixNews, 'namespace' => 'News'], function () {
         Route::get('/{articleName}-{articleId}.html', ['as' => $controllerName . '/index', 'uses' => $controller . 'index'])
                 ->where('articleName', '[0-9a-zA-Z_-]+')
                 ->where('articleId', '[0-9]+');
+    });
+
+    // =========================== NOTIFY ==============================
+    $prefix = '';
+    $controllerName = 'notify';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('/no-permissionno-permission', ['as' => $controllerName . '/noPermission', 'uses' => $controller . 'noPermission']);
     });
 
     // =========================== LOGIN ==============================

@@ -597,3 +597,8 @@ Thực hiện chức năng đăng nhập:
     Khi vào 1 link bất kỳ nếu mà middleware kiểm tra thành công thì sẽ tiếp tục truy cập vào link đó, còn không thì sẽ redirect về trang home
   Khi sử dụng 1 middleware thì cần đăng ký trong app/Http/Kernel.php
   Khi có middleware và đăng ký xong thì cần phải cho biết middleware này được sử dụng cho những màn hình nào -> khai báo trong route
+- admin area: Giới hạn vùng truy cập những người có có quyền admin thì mới có thể truy cập vào vùng quản trị
+  Nếu như 1 người chưa đăng nhập mà cố tình vào trang admin thì sẽ được đẩy về trang login
+  Đã đăng nhập và cố tình vào trang login:
+    Nếu người dùng đó có level là admin thì truy cập bình thường
+    Nếu người dùng đó có level không phải là admin thì sẽ đẩy về trang notify(noPermission)
