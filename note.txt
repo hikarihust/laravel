@@ -602,3 +602,17 @@ Thực hiện chức năng đăng nhập:
   Đã đăng nhập và cố tình vào trang login:
     Nếu người dùng đó có level là admin thì truy cập bình thường
     Nếu người dùng đó có level không phải là admin thì sẽ đẩy về trang notify(noPermission)
+
+ ============================================ Tổng kết ============================================
+Một số tình huống mở rộng:
+  Login, phân vùng truy cập:
+    Security Authentication, Middleware
+  Tắt debugbar: Vào file .env
+    DEBUGBAR_ENABLED = FALSE
+  Eloquent: Relationships
+  Chức năng mosted view: Dựa vào IP của từng user khi vào xem các bài viết thì tăng số lượt xem
+  Chức năng hiển thị mục bài viết bạn muốn xem: Xem các bài viết mà người dùng đó xem thuộc loại category nào rồi từ đó hiển thị các bài viết 
+    mới nhất của bài viết đó lên
+  Mục quảng cáo:
+    Tên đơn vị, hình quảng cáo, vị trí đặt quảng cáo, giá tiền, bắt đầu, kết thúc
+  Tags: Khi thêm 1 bài viết thì tiến hành thêm tag cho bài viết đó, một bài viết có thể thuộc 1 hoặc nhiều tag
