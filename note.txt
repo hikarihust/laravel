@@ -623,3 +623,8 @@ Một số tình huống mở rộng:
 
 Download(Excel):
   http://proj_news.xyz12345/admin/training/download/1
+
+Import and Export Excel and CSV in Laravel 5 Using maatwebsite
+  composer require maatwebsite/excel
+  "maatwebsite/excel": "~2.1.0": Hàm load không hỗ trợ cho maatwebsite v3.
+  Route::get('/form', ['as' => $controllerName, 'uses' => $controller . 'form']);

@@ -118,7 +118,14 @@ Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin', 'middleware' => 
     $controllerName = 'training';
     Route::group(['prefix' => $prefix], function () use ($controllerName) {
         $controller = ucfirst($controllerName) . 'Controller@'; 
+        // Download(Excel)
         Route::get('/download/{id}', ['as' => $controllerName, 'uses' => $controller . 'download']);
+
+
+        // Import and Export Excel and CSV in Laravel 5 Using maatwebsite
+        Route::get('/form', ['as' => $controllerName, 'uses' => $controller . 'form']);
+        Route::post('/submit', ['as' => $controllerName . '/submit', 'uses' => $controller . 'submit']);
+        Route::get('/export/{type}', ['as' => $controllerName . '/export', 'uses' => $controller . 'export']);
     });
 });
 
