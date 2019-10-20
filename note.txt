@@ -616,3 +616,10 @@ Một số tình huống mở rộng:
   Mục quảng cáo:
     Tên đơn vị, hình quảng cáo, vị trí đặt quảng cáo, giá tiền, bắt đầu, kết thúc
   Tags: Khi thêm 1 bài viết thì tiến hành thêm tag cho bài viết đó, một bài viết có thể thuộc 1 hoặc nhiều tag
+
+===========================================Finish================================================================
+
+=================================================================================================================
+
+Download(Excel):
+  http://proj_news.xyz12345/admin/training/download/1

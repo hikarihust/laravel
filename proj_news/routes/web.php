@@ -108,6 +108,18 @@ Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin', 'middleware' => 
         Route::get('change-status-{status}/{id}', ['as' => $controllerName . '/status','uses' => $controller . 'status']);
         Route::get('change-level-{level}/{id}', ['as' => $controllerName . '/level','uses' => $controller . 'level']);
     });
+
+
+
+    // ===================================Finish============================================
+
+    // =========================== Laravel training ==============================
+    $prefix = 'training';
+    $controllerName = 'training';
+    Route::group(['prefix' => $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName) . 'Controller@'; 
+        Route::get('/download/{id}', ['as' => $controllerName, 'uses' => $controller . 'download']);
+    });
 });
 
 // News
